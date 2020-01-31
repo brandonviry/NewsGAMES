@@ -1,0 +1,51 @@
+
+  #prompt
+  {
+    border:3px solid  #0b0c0e;
+    padding: 3em;
+    position: absolute;
+    width: 350px;
+
+    background-color: #18191b;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    left: 35%;
+    top: 10%;
+    z-index: 10;
+    display: none;
+
+
+   
+ 
+}
+  #sub1
+  {
+     background-color: #008CBA;
+  color: white;
+  padding: 1em;
+  padding: 12px 30px;
+  float: right;
+  border:3px solid white;
+  border-radius: 15px;
+  margin-bottom: 0px;
+  }
+input
+{
+ width: 100%;
+
+}
+ 
+#contenue1 > img
+{
+  width: 20px;
+  height: 20px;
+  padding: 0%;
+  margin: 0%;
+}
+#contenue1  > p
+{
+
+  padding: 0%;
+  margin-top: 0%;
+}

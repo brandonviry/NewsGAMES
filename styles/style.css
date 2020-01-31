@@ -1,0 +1,332 @@
+/*
+Projet:NewsGAME
+auteur: Brandon VIRY
+titre:InterfaceParametre
+*/ 
+header
+{
+	background-image: url('https://avante.biz/wp-content/uploads/Wallpaper-Lenovo/Wallpaper-Lenovo-007.jpg');
+	padding-left: 5%;
+
+}
+header  > img
+{
+width: 600px;
+justify-content: center;
+margin-left: 25%;
+
+
+}
+header  > div.a
+{
+
+color: white;
+padding: 1em;
+width: 25%;
+text-align: center;
+position: absolute;
+margin-top: 5em;
+margin-left: 5em;
+
+}
+section > div >img 
+{
+	width: 100px;
+	height: 100px;
+	border-radius: 5%;
+	background-color: black;
+	padding: 1em;
+	margin:0.5em;
+
+
+}
+
+section > div#c
+{
+	
+
+	margin: 0;
+
+	height:100%;
+	width: 50%;
+
+	padding: 1em;
+	margin-left:20%;
+	margin-right: 20%;
+	overflow-y: scroll;
+	position: relative;
+	top: 0px;
+	z-index: 1;
+
+
+
+	
+
+}
+section > div#e
+{
+	
+
+	margin: 0;
+	background-image:url("../images/gaming.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	height:100%;
+	width: 50%;
+
+	padding: 1em;
+	margin-left:20%;
+	margin-right: 20%;
+	opacity: 0.769;
+	position: relative;
+	top: -108%;
+	z-index: 0;
+
+
+
+	
+
+}
+footer
+{
+	height:100%;
+	background-color: black;
+	position: relative;
+	z-index: 3;
+
+
+
+}
+section
+{
+	margin: 0px;
+	background-image: url("https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapertag.com%2Fwallpaper%2Ffull%2Fb%2Fe%2F4%2F342028-game-background-2560x1440-for-windows.jpg&f=1");
+	background-repeat: no-repeat;
+	background-size:  100% 100% ;
+	height: 25.5em;
+
+
+
+
+
+}
+body
+{
+	margin: 0px;
+	 overflow:hidden;
+
+	height: 100%;
+}
+header > div.a >p
+{
+	font-size: 20px;
+	margin: 0px;
+	font-family: 'Libre Baskerville', serif;
+	font-style: italic;
+
+}
+
+header > div.a > h1
+{
+	font-size: 81.2px;
+	margin: 0px;
+	font-family: Aileron Heavy;
+
+}
+header > div.a > h3
+{
+	font-size: 24.4px;
+	margin: 0px;
+	font-family: Aileron Heavy;
+}
+@font-face {
+	font-family: "Aileron Heavy";
+	src: url('../font/Aileron Heavy.otf');
+}
+@font-face {
+	font-family: "Aileron";
+	src: url('../font/Aileron.otf');
+}
+
+ol
+{
+	position: absolute;
+	top: 43%;
+	background-color: white;
+	height:40%;
+	border-radius: 0px 15px 15px 0px;
+	padding: 2em;
+}
+
+a
+{
+font-size: 32px;
+text-decoration: none;
+color: black;
+}
+li
+{
+	list-style: none;
+	margin-top:5%;
+	margin-bottom: 5%;
+	
+	width: 100%;
+	text-align: center;
+}
+div.b
+{
+	color: white;
+	border: 5px solid #0d6e98;
+	margin-left: 60%;
+	height: 240px;
+	position: absolute;
+	top: 2%;
+	width: 450px;
+	padding:0.5em;
+	background-color:  #18191b;
+
+	
+}
+
+div.b > p.case1
+{
+	color: white;
+	background-color: #18191b;
+	text-align: center;
+	position: absolute;
+	bottom: 0px;
+	margin: 0px;
+	width: 100%;
+	left: 0px;
+	height: 25px;
+	font-size: 24px;
+			cursor:pointer;
+
+}
+.titre
+{
+	color: white;
+	background-color: #18191b;
+
+}
+.titre >div> h3
+{
+	text-align:center;
+	margin: 9px;
+	margin-bottom:0px;
+
+
+}
+
+.titre >div> img
+{
+	width: 40px;
+	height:40px;
+
+
+}
+.titre > div
+{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	
+	margin: 0px;
+
+}
+
+.notif
+{
+	
+	width: 100%;
+	height: 70%;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	overflow-y: scroll;
+	scrollbar-color:  #0d6e98 #18191b;
+
+
+}
+
+#jeu
+{
+	color: black;
+	display: flex;
+	flex-wrap: nowrap;
+	border: 5px solid #0b0c0e;
+	margin: 9px;
+	background-color: white;
+
+
+}
+#jeu > div> p , #jeu > div> h3 
+{
+	margin: 0px;
+}
+
+#jeu > img
+{
+	width: 50px;
+	height: 50px;
+	border-radius: 5%;
+	background-color: black;
+	padding: 1em;
+	margin:0.5em;
+
+
+}
+#jeu > div
+{
+	margin-top:12px;
+	margin-bottom: 12px;
+}
+.nav
+{
+	background-color: black;
+	opacity: 0.5;
+	color:white;
+	position: absolute;
+	top: 50%;
+	font-size: 2em;
+	right: 0px;
+	width: 1em;
+	padding: 0px;
+
+
+	cursor:pointer;
+	
+	
+
+}
+.nav > .bas
+{
+	margin-top: 5em;
+}
+
+#c > img
+{
+	cursor: progress;
+
+}
+
+#recherche > img
+{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 2;
+	cursor: pointer;
+}
+#reload> img
+{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 0px;
+	left: 50px;
+	z-index: 2;
+	background-color: white;
+	cursor: pointer;
+}

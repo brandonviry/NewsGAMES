@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NewsGAMES</title>
+<link rel="icon" type="image/png" href="images/logo.png" />
+<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet"> 
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link rel="stylesheet" type="text/css" href="styles/dialog.css">
+
+<link rel="stylesheet" type="text/css" href="styles/prompt.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Se site a était devellopé pour un Projet étudiant en début de 2019 ">
+ 
+  <meta name="author" content="VIRY Brandon">
+
+</head>
+<!-- code de auteur date.js-->
+<script type="text/javascript">
+var ladate=new Date();
+
+var date =(ladate.getDate()+"/"+(ladate.getMonth()+1)+"/"+ladate.getFullYear());
+</script>
+<!-- code de auteur date.js-->
+<body>
+	<!-- 
+Projet:NewsGAME
+auteur: Brandon VIRY
+titre:InterfaceVisuel
+ -->
+<header>
+	<div id="dialog" >
+	  	    <h1 id="title">Ce site ne peut ètre consulter hors ligne(Firefox recommander)</h1>
+
+		 	<div id="contenue">
+		   	  <p>Cliqué sur le bouton pour continuée!</p>
+		   	</div>
+
+	 <p id='sub'>OK</p>
+	</div>
+
+	<div id="prompt" >
+	  	    <h1 id="title1">RECHERCHE</h1>
+
+		 	<div id="contenue1">
+		 		<img src="https://www.logolynx.com/images/logolynx/53/53d699ccdeff9da179a7a9733dec21f7.png">
+		 		<p>( Dèbut d'un titre en majuscule ) </p>
+		 		<p>( Résultat dans la zone gaming ) </p>
+
+		   	  <input type="text" name="recherche" value="recherche">
+		   	</div>
+
+	 <p id='sub1'>OK</p>
+	</div>
+
+	<div class="a" onload ="date();" >
+	<p>Date et heurre local </p>
+	<!-- id laison  code js  de  "Louis-Alexis MALBROUQUI"  titre:heurre&date-->
+	<h1 id="afficherheure">00:00:00</h1>
+	<h3 id="afficherdate" >00/00/0000</h3>
+	
+	</div>
+
+	<div class="b">
+		<div class="titre">
+			<div>
+				<img src="images/alarm-filled.png" alt="notif">
+				<h3>Sortie Immédiate</h3>
+				
+			</div>
+			
+		
+		</div>
+		<div class="notif" id="nf">
+			
+
+			<div id="jeu">
+				<img src="images/fortnite-battle-royale-Fortnite_home_fn_battle_logo-1159x974-8edd8b02d505b78febe3baacec47a83c2d5215ce.png" id="img">
+				<div>
+					<h3 id="nom">Nom</h3>
+					<p id="Auteur">auteur</p>
+					<p id="sortie">heurre date</p>
+				</div>
+			</div>
+
+			<div id="jeu">
+				<img src="images/fortnite-battle-royale-Fortnite_home_fn_battle_logo-1159x974-8edd8b02d505b78febe3baacec47a83c2d5215ce.png" id="img">
+				<div>
+					<h3 id="nom">Nom</h3>
+					<p id="Auteur">auteur</p>
+					<p id="sortie">heurre date</p>
+				</div>
+			</div>			
+
+			<div id="jeu">
+				<img src="images/fortnite-battle-royale-Fortnite_home_fn_battle_logo-1159x974-8edd8b02d505b78febe3baacec47a83c2d5215ce.png" id="img">
+				<div>
+					<h3 id="nom">Nom</h3>
+					<p id="Auteur">auteur</p>
+					<p id="sortie">heurre date</p>
+				</div>
+			</div>
+
+			<div id="jeu">
+				<img src="images/fortnite-battle-royale-Fortnite_home_fn_battle_logo-1159x974-8edd8b02d505b78febe3baacec47a83c2d5215ce.png" id="img">
+				<div>
+					<h3 id="nom">Nom</h3>
+					<p id="Auteur">auteur</p>
+					<p id="sortie">heurre date</p>
+				</div>
+			</div>	
+
+		</div>
+
+
+		<p class="case1" onclick="descendre('nf');">&#9660</p>
+	</div>
+	
+	
+	<img src="images/logo.png" alt="logo">
+
+	<div id="recherche">
+		<img src="https://image.freepik.com/free-icon/google-web-search_318-1791.jpg" alt="recherche">
+		
+		
+	</div>
+	<div id="reload">
+		<img src="https://cdn0.iconfinder.com/data/icons/basic-uses-symbol-vol-3/100/Refresh_Reset_Reload_Again_Restart-512.png" alt="recharger">
+		
+	</div>
+</header>
+	<nav>
+	<ol>
+		<li  ><a href="#jour">Aujourd'hui</a> </li>
+		<li><a href="#demain">Demain</a></li>
+		<li><a href="">Cette semaine</a></li>
+		<li><a href="#mois">Ce moi ci</a></li>
+		<li><a href="">Dans 6 mois</a></li>
+		<li><a href="#annee">Dans l'année</a></li>
+		
+	</ol>
+
+</nav>
+
+<section>
+	<div class="nav">
+		<div class="haut" onclick="monter('c');">&#9650;</div>
+		<div class="bas" onclick="descendre('c');">&#9660;</div>
+	</div>
+
+<div id="c" >
+
+
+	<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNqtQu_p3H0UdMiV24VwiydvMs4dKe7rQV1GeUswNAtVsVRjSp" alt="23/5/2019" title="Mortal kombat" id="img" >
+
+	<img src="https://www.windowscentral.com/sites/wpcentral.com/files/topic_images/2018/the-division-2-logo-topic.png" alt="15/3/2019" title="Tom clancy's the division 2" id="img" >
+
+	<img src="https://steamcdn-a.akamaihd.net/steam/apps/814380/capsule_616x353.jpg?t=1549568153" alt="22/3/2019" title="Sekiro : shadows die twice " id="img" >
+
+	<img src="http://image.jeuxvideo.com/medias-sm/153901/1539005034-3848-jaquette-avant.jpg" alt="18/1/2019" title="Sword art online : fatal bullet - dissonance of the nexus" id="img" >
+
+	<img src="https://upload.wikimedia.org/wikipedia/fr/0/0b/Kingdom_Hearts_3_Logo.png" alt="29/1/2019" title="Kingdom Hearts III" id="img" >
+
+	<img src="https://media.cultura.com/media/catalog/product/cache/1/image/1000x1000/9df78eab33525d08d6e5fb8d27136e95/a/s/assassin-s-creed-3-assassin-s-creed-3307216111610_13.jpg" alt="21/5/2019" title="Assassin's creed III" id="img" >
+	
+	<img src="http://image.jeuxvideo.com/medias-md/154049/1540487607-9219-card.jpg" alt="21/5/2019" title="Team sonic racing" id="img" >	
+
+</div>
+<div id="e" >
+
+
+
+</div>
+
+</section>
+<footer>-</footer>
+<script type="text/javascript" src="js/heure.js"></script>
+<script type="text/javascript" src="js/date.js"></script>
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script type="text/javascript" src="js/nav.js"></script>
+<script type="text/javascript" src="js/scrollnav.js"></script>
+<script type="text/javascript" src="js/dialog.js"></script>
+<script type="text/javascript" src="js/prompt.js"></script>
+</body>
+</html>
