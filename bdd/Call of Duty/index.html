@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Call of Duty — Landing Page FR</title>
+  <meta name="description" content="Landing page responsive en français pour Call of Duty. Branding tactique, CTA clairs, preuve sociale, bénéfices, FAQ et footer." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🎯</text></svg>">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Thème Tailwind : palette & typographies (branding tactique)
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            tac: {
+              50: '#f6f7f6',
+              100: '#e9ece9',
+              200: '#cfd6d0',
+              300: '#aab7ad',
+              400: '#7d9280',
+              500: '#556b57', // vert militaire
+              600: '#435446',
+              700: '#303d33',
+              800: '#1f2921',
+              900: '#121812'
+            },
+            coal: '#0b0d0c',
+            steel: '#141816',
+            accent: '#f3f4f6'
+          },
+          fontFamily: {
+            display: ['Bebas Neue', 'Impact', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial']
+          },
+          boxShadow: {
+            cta: '0 10px 24px rgba(85,107,87,0.35)'
+          },
+          backgroundImage: {
+            grid: 'linear-gradient(transparent 31px, rgba(255,255,255,0.06) 32px), linear-gradient(90deg, transparent 31px, rgba(255,255,255,0.06) 32px)'
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Webfonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Tablette paysage : rééquilibrage grille */
+    @media (orientation: landscape) and (max-width: 1024px) {
+      .landscape-grid { grid-template-columns: 1.1fr 0.9fr; }
+    }
+    .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,0.04); }
+    .badge { border: 1px dashed rgba(255,255,255,0.2); }
+  </style>
+</head>
+<body class="bg-coal text-white font-sans selection:bg-tac-600 selection:text-white">
+  <!-- Header / Nav -->
+  <header class="sticky top-0 z-50 bg-coal/85 glass border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#hero" class="flex items-center gap-3 group" aria-label="Aller au début">
+          <div class="w-10 h-10 rounded bg-tac-600 grid place-content-center">
+            <span class="text-xl">🎯</span>
+          </div>
+          <div class="leading-tight">
+            <div class="font-display text-xl tracking-wide">TaskForce</div>
+            <div class="text-xs text-white/60">Expériences tactiques</div>
+          </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a class="hover:text-tac-300 transition" href="#benefits">Bénéfices</a>
+          <a class="hover:text-tac-300 transition" href="#social2">Témoignages</a>
+          <a class="hover:text-tac-300 transition" href="#faq">FAQ</a>
+          <a class="px-4 py-2 rounded bg-tac-600 hover:bg-tac-500 transition shadow-cta" href="#cta-final">Jouer maintenant</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden p-2 rounded hover:bg-white/5" aria-expanded="false" aria-controls="mobileMenu" aria-label="Ouvrir le menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/5">
+      <div class="px-4 py-3 space-y-2 text-sm">
+        <a class="block px-3 py-2 rounded hover:bg-white/5" href="#benefits">Bénéfices</a>
+        <a class="block px-3 py-2 rounded hover:bg-white/5" href="#social2">Témoignages</a>
+        <a class="block px-3 py-2 rounded hover:bg-white/5" href="#faq">FAQ</a>
+        <a class="block px-3 py-2 rounded bg-tac-600 hover:bg-tac-500 text-center" href="#cta-final">Jouer maintenant</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid bg-[length:32px_32px] opacity-10 pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-28 grid gap-10 lg:grid-cols-2 landscape-grid items-center">
+
+      <div class="space-y-6">
+        <p class="uppercase tracking-[0.25em] text-white/70 text-xs">Jeu vidéo • FPS • Compétitif</p>
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-tight">
+          Call of Duty
+        </h1>
+        <p class="text-white/85 text-lg max-w-xl">
+          Rejoignez l’escouade. Maîtrisez un gameplay nerveux, des cartes légendaires et des modes intenses — du multijoueur à la bataille royale.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+          <a href="#cta-final" class="inline-flex items-center justify-center px-6 py-3 rounded bg-tac-600 hover:bg-tac-500 font-semibold shadow-cta">Jouer maintenant</a>
+          <a href="#trailer" class="inline-flex items-center justify-center px-6 py-3 rounded border border-white/15 hover:border-white/30">Voir la bande‑annonce</a>
+        </div>
+        <div class="flex items-center gap-6 pt-4 text-sm text-white/70">
+          <div class="flex items-center gap-2">
+            <span>★★★★★</span>
+            <span>4,6/5 • 60k+ avis</span>
+          </div>
+          <div class="hidden sm:block">Référence FPS depuis des années</div>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="aspect-[16/9] rounded-lg overflow-hidden border border-white/10 shadow-2xl" id="trailer">
+          <!-- Remplacez l'URL par votre vidéo officielle -->
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/u1UFojIiiK8?rel=0&modestbranding=1" title="Call of Duty Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p class="mt-3 text-xs text-white/60">Astuce : utilisez une image hero WebP pour des performances optimales sur mobile.</p>
+      </div>
+
+      <!-- Social proof logos (micro) -->
+      <div class="lg:col-span-2 border-t border-white/5 pt-8 mt-4">
+        <p class="text-sm text-white/60 mb-4">Plébiscité par des joueurs et médias :</p>
+        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4 opacity-85">
+          <div class="h-12 rounded grid place-content-center border border-white/10 bg-white/5">Activision</div>
+          <div class="h-12 rounded grid place-content-center border border-white/10 bg-white/5">IGN</div>
+          <div class="h-12 rounded grid place-content-center border border-white/10 bg-white/5">GameSpot</div>
+          <div class="h-12 rounded grid place-content-center border border-white/10 bg-white/5">Eurogamer</div>
+          <div class="h-12 rounded grid place-content-center border border-white/10 bg-white/5">JV.com</div>
+          <div class="h-12 rounded grid place-content-center border border-white/10 bg-white/5">PC Gamer</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section id="benefits" class="relative py-16 lg:py-24">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="w-64 h-64 bg-tac-600/25 rounded-full blur-3xl absolute -top-10 -left-10"></div>
+      <div class="w-72 h-72 bg-white/10 rounded-full blur-3xl absolute bottom-0 right-0"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div class="space-y-4">
+          <h2 class="font-display text-3xl sm:text-4xl">Pourquoi vous allez adorer</h2>
+          <p class="text-white/75 max-w-prose">Pensé pour l’adrénaline et la précision : gunplay maîtrisé, progression claire et contenu saisonnier pour rester au top.</p>
+          <div class="grid sm:grid-cols-2 gap-4 mt-6">
+            <!-- Benefits (primaires) -->
+            <div class="p-5 rounded border border-white/10 bg-white/5">
+              <div class="text-2xl mb-2">🎮</div>
+              <h3 class="font-semibold">Gunplay précis</h3>
+              <p class="text-sm text-white/70">Manipulation des armes fluide, sensations nettes à chaque impact.</p>
+            </div>
+            <div class="p-5 rounded border border-white/10 bg-white/5">
+              <div class="text-2xl mb-2">🗺️</div>
+              <h3 class="font-semibold">Cartes iconiques</h3>
+              <p class="text-sm text-white/70">Arènes nerveuses et hotspots stratégiques pour chaque style.</p>
+            </div>
+            <div class="p-5 rounded border border-white/10 bg-white/5">
+              <div class="text-2xl mb-2">🛡️</div>
+              <h3 class="font-semibold">Progression & classes</h3>
+              <p class="text-sm text-white/70">Créez vos atouts, équipements et spécialisations.</p>
+            </div>
+            <div class="p-5 rounded border border-white/10 bg-white/5">
+              <div class="text-2xl mb-2">🌐</div>
+              <h3 class="font-semibold">Compétitif en ligne</h3>
+              <p class="text-sm text-white/70">Ligues, rankings et événements saisonniers.</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-3 pt-4">
+            <a href="#cta-final" class="px-6 py-3 rounded bg-tac-600 hover:bg-tac-500 shadow-cta font-semibold">Télécharger</a>
+            <a href="#faq" class="px-6 py-3 rounded border border-white/15 hover:border-white/30">Questions fréquentes</a>
+          </div>
+        </div>
+
+        <!-- Features (secondaires) -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <div class="p-4 rounded border border-white/10 bg-steel/70">
+            <div class="text-xs uppercase text-white/60">Plateformes</div>
+            <div class="mt-2 text-sm">PC, PlayStation, Xbox</div>
+          </div>
+          <div class="p-4 rounded border border-white/10 bg-steel/70">
+            <div class="text-xs uppercase text-white/60">Modes</div>
+            <div class="mt-2 text-sm">Multijoueur, Battle Royale, Coop</div>
+          </div>
+          <div class="p-4 rounded border border-white/10 bg-steel/70">
+            <div class="text-xs uppercase text-white/60">Cross‑play</div>
+            <div class="mt-2 text-sm">Selon plateformes/modes</div>
+          </div>
+          <div class="p-4 rounded border border-white/10 bg-steel/70">
+            <div class="text-xs uppercase text-white/60">Accessibilité</div>
+            <div class="mt-2 text-sm">Sous‑titres, options visuelles/sonores</div>
+          </div>
+          <div class="p-4 rounded border border-white/10 bg-steel/70">
+            <div class="text-xs uppercase text-white/60">Contenu</div>
+            <div class="mt-2 text-sm">Passe de combat, saisons</div>
+          </div>
+          <div class="p-4 rounded border border-white/10 bg-steel/70">
+            <div class="text-xs uppercase text-white/60">Âge</div>
+            <div class="mt-2 text-sm">PEGI 18</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof (Testimonials) -->
+  <section id="social2" class="py-16 lg:py-24 border-y border-white/5 bg-gradient-to-b from-coal to-steel">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-3xl sm:text-4xl text-center mb-10">Ils en parlent</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <figure class="p-6 rounded border border-white/10 bg-white/5">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200" alt="Photo cliente" class="w-10 h-10 rounded object-cover" />
+            <figcaption>
+              <div class="font-semibold">Léa M.</div>
+              <div class="text-xs text-white/60">Paris</div>
+            </figcaption>
+          </div>
+          <blockquote class="text-white/80">« Des sensations d’armes au top et un matchmaking rapide. »</blockquote>
+        </figure>
+        <figure class="p-6 rounded border border-white/10 bg-white/5">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=200" alt="Photo client" class="w-10 h-10 rounded object-cover" />
+            <figcaption>
+              <div class="font-semibold">Yanis A.</div>
+              <div class="text-xs text-white/60">Lyon</div>
+            </figcaption>
+          </div>
+          <blockquote class="text-white/80">« Le battle royale reste ultra addictif avec l’équipe. »</blockquote>
+        </figure>
+        <figure class="p-6 rounded border border-white/10 bg-white/5">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=200" alt="Photo client" class="w-10 h-10 rounded object-cover" />
+            <figcaption>
+              <div class="font-semibold">Nora K.</div>
+              <div class="text-xs text-white/60">Montréal</div>
+            </figcaption>
+          </div>
+          <blockquote class="text-white/80">« Des mises à jour régulières, on ne s’ennuie jamais. »</blockquote>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-16 lg:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-3xl sm:text-4xl text-center mb-10">Questions fréquentes</h2>
+      <div class="space-y-3">
+        <details class="group border border-white/10 rounded p-5 bg-white/5">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="font-semibold">Faut‑il être en ligne ?</span>
+            <span class="ml-3 transition group-open:rotate-45">+</span>
+          </summary>
+          <div class="pt-3 text-white/80">Certaines expériences sont hors‑ligne, mais les modes multijoueur nécessitent Internet.</div>
+        </details>
+        <details class="group border border-white/10 rounded p-5 bg-white/5">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="font-semibold">Compatibilité cross‑play ?</span>
+            <span class="ml-3 transition group-open:rotate-45">+</span>
+          </summary>
+          <div class="pt-3 text-white/80">Selon plateformes et modes. Vous pouvez l’activer/désactiver dans les options.</div>
+        </details>
+        <details class="group border border-white/10 rounded p-5 bg-white/5">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="font-semibold">Quelles configs PC ?</span>
+            <span class="ml-3 transition group-open:rotate-45">+</span>
+          </summary>
+          <div class="pt-3 text-white/80">Le jeu est optimisé pour une large gamme de PC. Une carte graphique dédiée est conseillée.</div>
+        </details>
+        <details class="group border border-white/10 rounded p-5 bg-white/5">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="font-semibold">Comment fonctionne le contenu saisonnier ?</span>
+            <span class="ml-3 transition group-open:rotate-45">+</span>
+          </summary>
+          <div class="pt-3 text-white/80">Nouveaux objets, cartes et événements à débloquer via un passe de combat.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section id="cta-final" class="py-16 lg:py-24 bg-[radial-gradient(800px_300px_at_50%_-20%,_rgba(85,107,87,0.25),_transparent_70%)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl sm:text-4xl mb-4">Prêt à déployer l’escouade ?</h2>
+      <p class="text-white/80 mb-6">Rejoignez des millions de joueurs et faites parler la poudre.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="https://www.callofduty.com/fr" class="px-7 py-3 rounded bg-tac-600 hover:bg-tac-500 shadow-cta font-semibold">Acheter Call of Duty</a>
+        <a href="#benefits" class="px-7 py-3 rounded border border-white/15 hover:border-white/30">Voir les fonctionnalités</a>
+      </div>
+      <p class="mt-3 text-xs text-white/60">*Certaines options varient selon la plateforme et la région.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 py-10 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div class="text-white/60">© <span id="year"></span> TaskForce. Fan‑site concept — non officiel.</div>
+        <ul class="flex flex-wrap gap-4 text-white/70">
+          <li><a class="hover:text-white" href="#">Conditions d’utilisation</a></li>
+          <li><a class="hover:text-white" href="#">Politique de confidentialité</a></li>
+          <li><a class="hover:text-white" href="#">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS minimal -->
+  <script>
+    // Année courante
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menu mobile toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => {
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!expanded));
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Défilement doux
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      })
+    });
+  </script>
+</body>
+</html>

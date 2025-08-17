@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FIFA 24 — Landing Page FR</title>
+  <meta name="description" content="Landing page responsive en français pour FIFA 24. Branding sportif, CTA clairs, preuve sociale, bénéfices, FAQ et footer." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>⚽</text></svg>">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Thème Tailwind : palette & typographies (branding football)
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pitch: {
+              50: '#f2fbf5',
+              100: '#dff7e7',
+              200: '#b9eccc',
+              300: '#86dea9',
+              400: '#49c97d',
+              500: '#16a34a', // vert terrain
+              600: '#118a3f',
+              700: '#0d6e33',
+              800: '#0a5528',
+              900: '#06381b'
+            },
+            night: {
+              50: '#f5f7fa',
+              100: '#e9edf3',
+              200: '#cfd8e3',
+              300: '#a7b6c9',
+              400: '#7a91ab',
+              500: '#556e8d',
+              600: '#3c4f6a',
+              700: '#29384d',
+              800: '#1a2434',
+              900: '#0f1622' // nuit stade
+            },
+            neon: '#22d3ee'
+          },
+          fontFamily: {
+            display: ['Anton', 'Impact', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial']
+          },
+          boxShadow: {
+            glow: '0 0 0 3px rgba(34,211,238,0.25)',
+            cta: '0 10px 25px rgba(22,163,74,0.35)'
+          },
+          backgroundImage: {
+            'hero-lights': 'radial-gradient(900px 400px at 20% -10%, rgba(34,211,238,0.20), transparent 60%), radial-gradient(800px 300px at 80% 0%, rgba(22,163,74,0.18), transparent 60%)',
+            'pitch-grid': 'linear-gradient(transparent 31px, rgba(255,255,255,0.06) 32px), linear-gradient(90deg, transparent 31px, rgba(255,255,255,0.06) 32px)'
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Webfonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Tablette paysage : rééquilibrage grille */
+    @media (orientation: landscape) and (max-width: 1024px) {
+      .landscape-grid { grid-template-columns: 1.1fr 0.9fr; }
+    }
+    .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,0.04); }
+  </style>
+</head>
+<body class="bg-night-900 text-white font-sans selection:bg-pitch-600 selection:text-white">
+  <!-- Header / Nav -->
+  <header class="sticky top-0 z-50 bg-night-900/85 glass border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#hero" class="flex items-center gap-3 group" aria-label="Aller au début">
+          <div class="w-10 h-10 rounded-lg bg-pitch-600 grid place-content-center shadow-glow">
+            <span class="text-xl">⚽</span>
+          </div>
+          <div class="leading-tight">
+            <div class="font-display text-lg tracking-wide">Arena&Co</div>
+            <div class="text-xs text-white/60">Expérience Foot Ultime</div>
+          </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a class="hover:text-neon transition" href="#benefits">Bénéfices</a>
+          <a class="hover:text-neon transition" href="#social2">Témoignages</a>
+          <a class="hover:text-neon transition" href="#faq">FAQ</a>
+          <a class="px-4 py-2 rounded-xl bg-pitch-600 hover:bg-pitch-500 transition shadow-cta" href="#cta-final">Jouer maintenant</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden p-2 rounded-lg hover:bg-white/5" aria-expanded="false" aria-controls="mobileMenu" aria-label="Ouvrir le menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/5">
+      <div class="px-4 py-3 space-y-2 text-sm">
+        <a class="block px-3 py-2 rounded-lg hover:bg-white/5" href="#benefits">Bénéfices</a>
+        <a class="block px-3 py-2 rounded-lg hover:bg-white/5" href="#social2">Témoignages</a>
+        <a class="block px-3 py-2 rounded-lg hover:bg-white/5" href="#faq">FAQ</a>
+        <a class="block px-3 py-2 rounded-lg bg-pitch-600 hover:bg-pitch-500 text-center" href="#cta-final">Jouer maintenant</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-hero-lights pointer-events-none"></div>
+    <div class="absolute inset-0 bg-pitch-grid bg-[length:32px_32px] opacity-10 pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-28 grid gap-10 lg:grid-cols-2 landscape-grid items-center">
+
+      <div class="space-y-6">
+        <p class="uppercase tracking-[0.2em] text-white/70 text-xs">Jeu vidéo • Football • Compétitif</p>
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-tight">
+          FIFA 24
+        </h1>
+        <p class="text-white/80 text-lg max-w-xl">
+          Entrez sur la pelouse. Maîtrisez les gestes techniques, bâtissez votre équipe de rêve et dominez les saisons en ligne.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+          <a href="#cta-final" class="inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-pitch-600 hover:bg-pitch-500 shadow-cta font-semibold">Jouer maintenant</a>
+          <a href="#trailer" class="inline-flex items-center justify-center px-6 py-3 rounded-2xl border border-white/15 hover:border-white/30">Voir la bande‑annonce</a>
+        </div>
+        <div class="flex items-center gap-6 pt-4 text-sm text-white/70">
+          <div class="flex items-center gap-2">
+            <span class="">★★★★★</span>
+            <span>4,7/5 • 30k+ avis</span>
+          </div>
+          <div class="hidden sm:block">Élu « Meilleure simulation foot »</div>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="aspect-[16/9] rounded-2xl overflow-hidden border border-white/10 shadow-2xl" id="trailer">
+          <!-- Remplacez l'URL par votre vidéo/image hero officielle -->
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/36gnw9BEnbU?rel=0&modestbranding=1" title="FIFA 24 Trailer (placeholder)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p class="mt-3 text-xs text-white/60">Astuce : utilisez une image hero WebP compressée pour un chargement éclair sur mobile.</p>
+      </div>
+
+      <!-- Social proof (logos) -->
+      <div class="lg:col-span-2 border-t border-white/5 pt-8 mt-4">
+        <p class="text-sm text-white/60 mb-4">Plébiscité par des joueurs et médias :</p>
+        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4 opacity-90">
+          <div class="h-12 bg-white/5 rounded-lg grid place-content-center border border-white/10">IGN</div>
+          <div class="h-12 bg-white/5 rounded-lg grid place-content-center border border-white/10">GameSpot</div>
+          <div class="h-12 bg-white/5 rounded-lg grid place-content-center border border-white/10">Metacritic</div>
+          <div class="h-12 bg-white/5 rounded-lg grid place-content-center border border-white/10">Eurogamer</div>
+          <div class="h-12 bg-white/5 rounded-lg grid place-content-center border border-white/10">JV.com</div>
+          <div class="h-12 bg-white/5 rounded-lg grid place-content-center border border-white/10">PC Gamer</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section id="benefits" class="relative py-16 lg:py-24">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="w-64 h-64 bg-pitch-600/25 rounded-full blur-3xl absolute -top-10 -left-10"></div>
+      <div class="w-72 h-72 bg-neon/20 rounded-full blur-3xl absolute bottom-0 right-0"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div class="space-y-4">
+          <h2 class="font-display text-3xl sm:text-4xl">Pourquoi vous allez adorer</h2>
+          <p class="text-white/70 max-w-prose">Pensé pour la compétition et le spectacle : un gameplay réactif, des stades sous les projecteurs et un mode Ultimate pour construire votre légende.</p>
+          <div class="grid sm:grid-cols-2 gap-4 mt-6">
+            <!-- Benefits (primaires) -->
+            <div class="p-5 rounded-2xl border border-white/10 bg-white/5">
+              <div class="text-2xl mb-2">🎯</div>
+              <h3 class="font-semibold">Contrôle précis</h3>
+              <p class="text-sm text-white/70">Dribbles, passes et frappes exécutés avec une finesse de pro.</p>
+            </div>
+            <div class="p-5 rounded-2xl border border-white/10 bg-white/5">
+              <div class="text-2xl mb-2">🏟️</div>
+              <h3 class="font-semibold">Ambiance stade</h3>
+              <p class="text-sm text-white/70">Tifos, chants et effets de lumière pour une immersion totale.</p>
+            </div>
+            <div class="p-5 rounded-2xl border border-white/10 bg-white/5">
+              <div class="text-2xl mb-2">🧠</div>
+              <h3 class="font-semibold">IA & tactiques</h3>
+              <p class="text-sm text-white/70">Ajustez votre plan de jeu et adaptez‑vous à l’adversaire.</p>
+            </div>
+            <div class="p-5 rounded-2xl border border-white/10 bg-white/5">
+              <div class="text-2xl mb-2">🌐</div>
+              <h3 class="font-semibold">Compétitif en ligne</h3>
+              <p class="text-sm text-white/70">Ligues, saisons et événements avec récompenses.</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-3 pt-4">
+            <a href="#cta-final" class="px-6 py-3 rounded-2xl bg-pitch-600 hover:bg-pitch-500 shadow-cta font-semibold">Télécharger</a>
+            <a href="#faq" class="px-6 py-3 rounded-2xl border border-white/15 hover:border-white/30">Questions fréquentes</a>
+          </div>
+        </div>
+
+        <!-- Features (secondaires) -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <div class="p-4 rounded-xl border border-white/10 bg-night-800/70">
+            <div class="text-xs uppercase text-white/60">Plateformes</div>
+            <div class="mt-2 text-sm">PC, PlayStation, Xbox, Switch</div>
+          </div>
+          <div class="p-4 rounded-xl border border-white/10 bg-night-800/70">
+            <div class="text-xs uppercase text-white/60">Modes</div>
+            <div class="mt-2 text-sm">Carrière, Ultimate, Coup d'envoi</div>
+          </div>
+          <div class="p-4 rounded-xl border border-white/10 bg-night-800/70">
+            <div class="text-xs uppercase text-white/60">Multijoueur</div>
+            <div class="mt-2 text-sm">Local & Online, Clubs</div>
+          </div>
+          <div class="p-4 rounded-xl border border-white/10 bg-night-800/70">
+            <div class="text-xs uppercase text-white/60">Accessibilité</div>
+            <div class="mt-2 text-sm">Sous‑titres, assistance, réglages</div>
+          </div>
+          <div class="p-4 rounded-xl border border-white/10 bg-night-800/70">
+            <div class="text-xs uppercase text-white/60">Licences*</div>
+            <div class="mt-2 text-sm">Clubs, stades, compétitions</div>
+          </div>
+          <div class="p-4 rounded-xl border border-white/10 bg-night-800/70">
+            <div class="text-xs uppercase text-white/60">Âge</div>
+            <div class="mt-2 text-sm">PEGI 3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof (Testimonials) -->
+  <section id="social2" class="py-16 lg:py-24 border-y border-white/5 bg-gradient-to-b from-night-900 to-night-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-3xl sm:text-4xl text-center mb-10">Ils en parlent</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <figure class="p-6 rounded-2xl border border-white/10 bg-white/5">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200" alt="Photo cliente" class="w-10 h-10 rounded-full object-cover" />
+            <figcaption>
+              <div class="font-semibold">Camille L.</div>
+              <div class="text-xs text-white/60">Marseille</div>
+            </figcaption>
+          </div>
+          <blockquote class="text-white/80">« Des matchs intenses, les stades sont magnifiques. »</blockquote>
+        </figure>
+        <figure class="p-6 rounded-2xl border border-white/10 bg-white/5">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=200" alt="Photo client" class="w-10 h-10 rounded-full object-cover" />
+            <figcaption>
+              <div class="font-semibold">Rayan O.</div>
+              <div class="text-xs text-white/60">Lille</div>
+            </figcaption>
+          </div>
+          <blockquote class="text-white/80">« Ultimate m’a rendu accro. Construire mon équipe est un régal. »</blockquote>
+        </figure>
+        <figure class="p-6 rounded-2xl border border-white/10 bg-white/5">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=200" alt="Photo client" class="w-10 h-10 rounded-full object-cover" />
+            <figcaption>
+              <div class="font-semibold">Sofia N.</div>
+              <div class="text-xs text-white/60">Genève</div>
+            </figcaption>
+          </div>
+          <blockquote class="text-white/80">« Le gameplay est ultra fluide, on y revient tous les soirs. »</blockquote>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-16 lg:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-3xl sm:text-4xl text-center mb-10">Questions fréquentes</h2>
+      <div class="space-y-3">
+        <details class="group border border-white/10 rounded-xl p-5 bg-white/5">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="font-semibold">Faut‑il une connexion permanente ?</span>
+            <span class="ml-3 transition group-open:rotate-45">+</span>
+          </summary>
+          <div class="pt-3 text-white/80">Solo hors‑ligne possible. Les modes en ligne et la progression Ultimate nécessitent Internet.</div>
+        </details>
+        <details class="group border border-white/10 rounded-xl p-5 bg-white/5">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="font-semibold">Le cross‑play est‑il disponible ?</span>
+            <span class="ml-3 transition group-open:rotate-45">+</span>
+          </summary>
+          <div class="pt-3 text-white/80">Selon les plateformes et modes. Vérifiez les options de partie pour activer/désactiver.</div>
+        </details>
+        <details class="group border border-white/10 rounded-xl p-5 bg-white/5">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="font-semibold">Quelles configurations PC ?</span>
+            <span class="ml-3 transition group-open:rotate-45">+</span>
+          </summary>
+          <div class="pt-3 text-white/80">Le jeu est optimisé pour une large gamme de PC. Une carte graphique dédiée est recommandée.</div>
+        </details>
+        <details class="group border border-white/10 rounded-xl p-5 bg-white/5">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="font-semibold">Des mises à jour de contenu ?</span>
+            <span class="ml-3 transition group-open:rotate-45">+</span>
+          </summary>
+          <div class="pt-3 text-white/80">Oui : événements saisonniers, effectifs et améliorations de gameplay.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section id="cta-final" class="py-16 lg:py-24 bg-[radial-gradient(800px_300px_at_50%_-20%,_rgba(22,163,74,0.25),_transparent_70%)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl sm:text-4xl mb-4">Prêt à marquer la saison ?</h2>
+      <p class="text-white/80 mb-6">Rejoignez des millions de joueurs et imposez votre style sur le terrain.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="https://www.playstation.com/fr-fr/games/ea-sports-fc-24/" class="px-7 py-3 rounded-2xl bg-pitch-600 hover:bg-pitch-500 shadow-cta font-semibold">Acheter FIFA 24</a>
+        <a href="#benefits" class="px-7 py-3 rounded-2xl border border-white/15 hover:border-white/30">Voir les fonctionnalités</a>
+      </div>
+      <p class="mt-3 text-xs text-white/60">*Certaines licences et options varient selon la région et la plateforme.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 py-10 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div class="text-white/60">© <span id="year"></span> Arena&Co. Fan‑site concept — non officiel.</div>
+        <ul class="flex flex-wrap gap-4 text-white/70">
+          <li><a class="hover:text-white" href="#">Conditions d’utilisation</a></li>
+          <li><a class="hover:text-white" href="#">Politique de confidentialité</a></li>
+          <li><a class="hover:text-white" href="#">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS minimal -->
+  <script>
+    // Année courante
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menu mobile toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => {
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!expanded));
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Défilement doux
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      })
+    });
+  </script>
+</body>
+</html>

@@ -1,187 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-<title>NewsGAMES</title>
-<link rel="icon" type="image/png" href="images/logo.png" />
-<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet"> 
-<link rel="stylesheet" type="text/css" href="styles/style.css">
-<link rel="stylesheet" type="text/css" href="styles/dialog.css">
-
-<link rel="stylesheet" type="text/css" href="styles/prompt.css">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="description" content="Se site a était devellopé pour un Projet étudiant en début de 2019 ">
- 
-  <meta name="author" content="VIRY Brandon">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NewsGAMES - Votre source d'actualités gaming. Découvrez les dernières sorties de jeux vidéo, news et tendances du monde du gaming.">
+    <meta name="keywords" content="jeux vidéo, gaming, actualités, sorties, news, games, console, PC">
+    <meta name="author" content="Brandon VIRY">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph pour les réseaux sociaux -->
+    <meta property="og:title" content="NewsGAMES - Actualités Gaming">
+    <meta property="og:description" content="Découvrez les dernières actualités du monde du gaming">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://newsgames.com">
+    <meta property="og:image" content="images/logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles CSS -->
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/dialog.css">
+    <link rel="stylesheet" href="styles/prompt.css">
+    
+    <title>NewsGAMES - Actualités Gaming & Sorties Jeux Vidéo</title>
 </head>
-<!-- code de auteur date.js-->
-<script type="text/javascript">
-var ladate=new Date();
 
-var date =(ladate.getDate()+"/"+(ladate.getMonth()+1)+"/"+ladate.getFullYear());
-</script>
-<!-- code de auteur date.js-->
 <body>
-	<!-- 
-Projet:NewsGAME
-auteur: Brandon VIRY
-titre:InterfaceVisuel
- -->
-<header>
-	<div id="dialog" >
-	  	    <h1 id="title">Ce site ne peut ètre consulter hors ligne(Firefox recommander)</h1>
+    <!-- Dialog modal -->
+    <div id="dialog" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-content" aria-hidden="true" style="display: none;">
+        <div id="dialog-content">
+            <h1 id="dialog-title">Ce site ne peut être consulté hors ligne (Firefox recommandé)</h1>
+            <p>Cliquez sur le bouton pour continuer!</p>
+            <button id="dialog-ok" type="button">OK</button>
+        </div>
+    </div>
 
-		 	<div id="contenue">
-		   	  <p>Cliqué sur le bouton pour continuée!</p>
-		   	</div>
+    <header>
+        <!-- Contrôles -->
+        <div class="header-controls">
+            <button id="reload-btn" type="button" aria-label="Recharger la page">
+                <img src="https://cdn0.iconfinder.com/data/icons/basic-uses-symbol-vol-3/100/Refresh_Reset_Reload_Again_Restart-512.png" alt="">
+            </button>
+        </div>
 
-	 <p id='sub'>OK</p>
-	</div>
+        <!-- Widget date/heure -->
+        <div class="datetime-widget" role="complementary" aria-label="Date et heure actuelles">
+            <p>Temps réel</p>
+            <time id="current-time" datetime="">00:00:00</time>
+            <span class="datetime-separator">•</span>
+            <time id="current-date" datetime="">00/00/0000</time>
+        </div>
 
-	<div id="prompt" >
-	  	    <h1 id="title1">RECHERCHE</h1>
+        <!-- Logo principal -->
+        <img src="images/logo.png" alt="Logo NewsGAMES" class="main-logo">
+    </header>
 
-		 	<div id="contenue1">
-		 		<img src="https://www.logolynx.com/images/logolynx/53/53d699ccdeff9da179a7a9733dec21f7.png">
-		 		<p>( Dèbut d'un titre en majuscule ) </p>
-		 		<p>( Résultat dans la zone gaming ) </p>
+    <nav role="navigation" aria-label="Navigation temporelle">
+        <ul>
+            <li><a href="#today">Aujourd'hui</a></li>
+            <li><a href="#tomorrow">Demain</a></li>
+            <li><a href="#week">Cette semaine</a></li>
+            <li><a href="#month">Ce mois-ci</a></li>
+            <li><a href="#semester">Dans 6 mois</a></li>
+            <li><a href="#year">Dans l'année</a></li>
+        </ul>
+    </nav>
 
-		   	  <input type="text" name="recherche" value="recherche">
-		   	</div>
+    <!-- Filtres par genre -->
+    <section class="genre-filters" role="region" aria-label="Filtres par genre">
+        <h2 class="sr-only">Filtrer les jeux par genre</h2>
+        
+        <!-- Filtre par titre -->
+        <div class="title-filter">
+            <label for="title-filter-input" class="filter-label">Filtrer par titre :</label>
+            <input type="text" 
+                   id="title-filter-input" 
+                   class="title-filter-input" 
+                   placeholder="Tapez le nom d'un jeu..." 
+                   aria-describedby="title-filter-help">
+            <small id="title-filter-help" class="filter-help">Filtrage en temps réel</small>
+        </div>
+        
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-genre="all" aria-pressed="true">
+                Tous les jeux
+            </button>
+            <button class="filter-btn" data-genre="Battle Royale" aria-pressed="false">
+                Battle Royale
+            </button>
+            <button class="filter-btn" data-genre="FPS" aria-pressed="false">
+                FPS
+            </button>
+            <button class="filter-btn" data-genre="RPG" aria-pressed="false">
+                RPG
+            </button>
+            <button class="filter-btn" data-genre="Sport" aria-pressed="false">
+                Sport
+            </button>
+            <button class="filter-btn" data-genre="Sandbox" aria-pressed="false">
+                Sandbox
+            </button>
+            <button class="filter-btn" data-genre="MOBA" aria-pressed="false">
+                <span aria-hidden="true">🏟️</span>
+                MOBA
+            </button>
+            <button class="filter-btn favorites-filter" data-genre="favorites" aria-pressed="false">
+                <span aria-hidden="true">❤️</span>
+                Mes Favoris
+            </button>
+        </div>
+    </section>
 
-	 <p id='sub1'>OK</p>
-	</div>
+    <main>
+        <section id="games-container" class="games-gallery" role="main" aria-label="Galerie de jeux">
+            <!-- Les jeux seront chargés dynamiquement par games-loader.js -->
+        </section>
 
-	<div class="a" onload ="date();" >
-	<p>Date et heurre local </p>
-	<!-- id laison  code js  de  "Louis-Alexis MALBROUQUI"  titre:heurre&date-->
-	<h1 id="afficherheure">00:00:00</h1>
-	<h3 id="afficherdate" >00/00/0000</h3>
-	
-	</div>
+        <div id="search-results" class="games-gallery hidden" role="region" aria-label="Résultats de recherche" aria-live="polite">
+            <!-- Les résultats de recherche apparaîtront ici -->
+        </div>
+    </main>
 
-	<div class="b">
-		<div class="titre">
-			<div>
-				<img src="images/alarm-filled.png" alt="notif">
-				<h3>Sortie Immédiate</h3>
-				
-			</div>
-			
-		
-		</div>
-		<div class="notif" id="nf">
-			
-
-			<div id="jeu">
-				<img src="images/fortnite-battle-royale-Fortnite_home_fn_battle_logo-1159x974-8edd8b02d505b78febe3baacec47a83c2d5215ce.png" id="img">
-				<div>
-					<h3 id="nom">Nom</h3>
-					<p id="Auteur">auteur</p>
-					<p id="sortie">heurre date</p>
-				</div>
-			</div>
-
-			<div id="jeu">
-				<img src="images/fortnite-battle-royale-Fortnite_home_fn_battle_logo-1159x974-8edd8b02d505b78febe3baacec47a83c2d5215ce.png" id="img">
-				<div>
-					<h3 id="nom">Nom</h3>
-					<p id="Auteur">auteur</p>
-					<p id="sortie">heurre date</p>
-				</div>
-			</div>			
-
-			<div id="jeu">
-				<img src="images/fortnite-battle-royale-Fortnite_home_fn_battle_logo-1159x974-8edd8b02d505b78febe3baacec47a83c2d5215ce.png" id="img">
-				<div>
-					<h3 id="nom">Nom</h3>
-					<p id="Auteur">auteur</p>
-					<p id="sortie">heurre date</p>
-				</div>
-			</div>
-
-			<div id="jeu">
-				<img src="images/fortnite-battle-royale-Fortnite_home_fn_battle_logo-1159x974-8edd8b02d505b78febe3baacec47a83c2d5215ce.png" id="img">
-				<div>
-					<h3 id="nom">Nom</h3>
-					<p id="Auteur">auteur</p>
-					<p id="sortie">heurre date</p>
-				</div>
-			</div>	
-
-		</div>
-
-
-		<p class="case1" onclick="descendre('nf');">&#9660</p>
-	</div>
-	
-	
-	<img src="images/logo.png" alt="logo">
-
-	<div id="recherche">
-		<img src="https://image.freepik.com/free-icon/google-web-search_318-1791.jpg" alt="recherche">
-		
-		
-	</div>
-	<div id="reload">
-		<img src="https://cdn0.iconfinder.com/data/icons/basic-uses-symbol-vol-3/100/Refresh_Reset_Reload_Again_Restart-512.png" alt="recharger">
-		
-	</div>
-</header>
-	<nav>
-	<ol>
-		<li  ><a href="#jour">Aujourd'hui</a> </li>
-		<li><a href="#demain">Demain</a></li>
-		<li><a href="">Cette semaine</a></li>
-		<li><a href="#mois">Ce moi ci</a></li>
-		<li><a href="">Dans 6 mois</a></li>
-		<li><a href="#annee">Dans l'année</a></li>
-		
-	</ol>
-
-</nav>
-
-<section>
-	<div class="nav">
-		<div class="haut" onclick="monter('c');">&#9650;</div>
-		<div class="bas" onclick="descendre('c');">&#9660;</div>
-	</div>
-
-<div id="c" >
-
-
-	<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNqtQu_p3H0UdMiV24VwiydvMs4dKe7rQV1GeUswNAtVsVRjSp" alt="23/5/2019" title="Mortal kombat" id="img" >
-
-	<img src="https://www.windowscentral.com/sites/wpcentral.com/files/topic_images/2018/the-division-2-logo-topic.png" alt="15/3/2019" title="Tom clancy's the division 2" id="img" >
-
-	<img src="https://steamcdn-a.akamaihd.net/steam/apps/814380/capsule_616x353.jpg?t=1549568153" alt="22/3/2019" title="Sekiro : shadows die twice " id="img" >
-
-	<img src="http://image.jeuxvideo.com/medias-sm/153901/1539005034-3848-jaquette-avant.jpg" alt="18/1/2019" title="Sword art online : fatal bullet - dissonance of the nexus" id="img" >
-
-	<img src="https://upload.wikimedia.org/wikipedia/fr/0/0b/Kingdom_Hearts_3_Logo.png" alt="29/1/2019" title="Kingdom Hearts III" id="img" >
-
-	<img src="https://media.cultura.com/media/catalog/product/cache/1/image/1000x1000/9df78eab33525d08d6e5fb8d27136e95/a/s/assassin-s-creed-3-assassin-s-creed-3307216111610_13.jpg" alt="21/5/2019" title="Assassin's creed III" id="img" >
-	
-	<img src="http://image.jeuxvideo.com/medias-md/154049/1540487607-9219-card.jpg" alt="21/5/2019" title="Team sonic racing" id="img" >	
-
-</div>
-<div id="e" >
-
-
-
-</div>
-
-</section>
-<footer>-</footer>
-<script type="text/javascript" src="js/heure.js"></script>
-<script type="text/javascript" src="js/date.js"></script>
-
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/nav.js"></script>
-<script type="text/javascript" src="js/scrollnav.js"></script>
-<script type="text/javascript" src="js/dialog.js"></script>
-<script type="text/javascript" src="js/prompt.js"></script>
+    <!-- Scripts JavaScript modernes -->
+    <script src="js/datetime.js"></script>
+    <script src="js/games-loader.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/ui-interactions.js"></script>
 </body>
 </html>

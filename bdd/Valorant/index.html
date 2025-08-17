@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VALO+ — Domine Valorant</title>
+    <meta name="description" content="Landing page responsive dédiée aux joueurs Valorant : entraînement, astuces et communauté. Conçue en TailwindCSS CDN + JS." />
+    <meta property="og:title" content="VALO+ — Domine Valorant" />
+    <meta property="og:description" content="Améliore ton aim, tes setups et grimpe le ladder. Rejoins VALO+." />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+            colors: {
+              brand: {
+                DEFAULT: '#ff4655', // primaire (cramoisi néon)
+                50: '#fff1f3',
+                100: '#ffe4e7',
+                200: '#fecdd3',
+                300: '#fda4af',
+                400: '#fb7185',
+                500: '#f43f5e',
+                600: '#ff4655',
+                700: '#e11d48',
+                800: '#be123c',
+                900: '#9f1239'
+              },
+              ink: {
+                DEFAULT: '#0f1923', // fond principal sombre
+                soft: '#131f2b',
+                softer: '#172434',
+                line: '#233445'
+              }
+            },
+            boxShadow: {
+              glow: '0 0 0 3px rgba(255,70,85,0.35)',
+            },
+            backgroundImage: {
+              'hero-grid': "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.06) 1px, transparent 0)",
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root { color-scheme: dark; }
+      html, body { background: #0f1923; }
+    </style>
+  </head>
+  <body class="bg-ink text-white antialiased selection:bg-brand/30">
+    <!-- Sticky Nav -->
+    <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-ink/70">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <a href="#" class="flex items-center gap-3 group">
+            <!-- Company logo (custom simple SVG) -->
+            <svg class="h-8 w-8 text-brand" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M3 5h4l5 7 5-7h4l-9 14L3 5z"/>
+            </svg>
+            <span class="text-lg font-extrabold tracking-tight">VALO<span class="text-brand">+</span></span>
+          </a>
+
+          <nav class="hidden md:flex items-center gap-8 text-sm">
+            <a href="#benefits" class="hover:text-brand transition">Avantages</a>
+            <a href="#proof1" class="hover:text-brand transition">Confiance</a>
+            <a href="#testimonials" class="hover:text-brand transition">Témoignages</a>
+            <a href="#faq" class="hover:text-brand transition">FAQ</a>
+            <a href="#cta" class="inline-flex items-center rounded-xl bg-brand px-4 py-2 font-semibold shadow-glow hover:brightness-110 active:scale-95 transition">Commencer</a>
+          </nav>
+
+          <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl border border-ink-line p-2 hover:bg-ink-soft" aria-label="Ouvrir le menu">
+            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile menu -->
+      <div id="mobileNav" class="md:hidden hidden border-t border-ink-line">
+        <div class="mx-auto max-w-7xl px-4 py-3 flex flex-col gap-3 text-sm">
+          <a href="#benefits" class="py-2">Avantages</a>
+          <a href="#proof1" class="py-2">Confiance</a>
+          <a href="#testimonials" class="py-2">Témoignages</a>
+          <a href="#faq" class="py-2">FAQ</a>
+          <a href="#cta" class="mt-2 inline-flex items-center justify-center rounded-xl bg-brand px-4 py-2 font-semibold shadow-glow">Commencer</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 -z-10">
+        <div class="h-full w-full bg-ink-soft" style="background-size: 24px 24px; background-image: var(--hero-grid, radial-gradient(circle at 1px 1px, rgba(255,255,255,0.06) 1px, transparent 0));"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-brand/10 via-transparent to-transparent"></div>
+      </div>
+
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-12 sm:pt-20 sm:pb-20">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <div class="flex items-center gap-3 text-xs uppercase tracking-widest text-brand/80 font-bold">
+              <span class="inline-flex h-5 w-5 items-center justify-center rounded-full bg-brand/20">⚡</span>
+              Optimisé pour Valorant — FR
+            </div>
+            <h1 class="mt-4 text-4xl sm:text-5xl font-extrabold leading-tight">
+              Grimpe le ladder <span class="text-brand">plus vite</span>
+            </h1>
+            <p class="mt-4 text-white/80 max-w-xl">
+              VALO+ t’aide à analyser tes matchs, perfectionner tes setups et communiquer comme un pro. Des routines d’aim, des line-ups interactifs et un coaching communautaire — au même endroit.
+            </p>
+
+            <!-- Reviews microcopy -->
+            <div class="mt-6 flex items-center gap-4">
+              <div class="flex -space-x-2">
+                <img alt="Photo joueur 1" class="h-8 w-8 rounded-full ring-2 ring-ink-soft" src="https://api.dicebear.com/8.x/identicon/svg?seed=valo1"/>
+                <img alt="Photo joueur 2" class="h-8 w-8 rounded-full ring-2 ring-ink-soft" src="https://api.dicebear.com/8.x/identicon/svg?seed=valo2"/>
+                <img alt="Photo joueur 3" class="h-8 w-8 rounded-full ring-2 ring-ink-soft" src="https://api.dicebear.com/8.x/identicon/svg?seed=valo3"/>
+              </div>
+              <p class="text-sm text-white/70">
+                Noté <span class="text-white">4,9/5</span> par 1 200 joueurs — « Aim doublé en 2 semaines »
+              </p>
+            </div>
+
+            <div class="mt-8 flex flex-wrap items-center gap-3">
+              <a href="#cta" class="inline-flex items-center rounded-xl bg-brand px-6 py-3 font-semibold shadow-glow hover:brightness-110 active:scale-95 transition">
+                Commencer gratuitement
+              </a>
+              <a href="#video" class="inline-flex items-center gap-2 rounded-xl border border-ink-line px-5 py-3 hover:bg-ink-soft">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                Voir la démo
+              </a>
+            </div>
+          </div>
+
+          <!-- Image / Video -->
+          <div id="video" class="relative rounded-2xl border border-ink-line bg-ink-soft p-2">
+            <div class="aspect-video overflow-hidden rounded-xl">
+                <embed 
+                src="https://www.youtube.com/embed/mfBoy9PyqR8?controls=0" 
+                class="w-full h-full">
+              
+            </div>
+            <div class="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-white/5"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social proof (customer logos) -->
+    <section id="proof1" class="py-10 sm:py-14 border-t border-ink-line/60">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <p class="text-center text-xs uppercase tracking-widest text-white/60">Ils font confiance à VALO+</p>
+        <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+          <!-- Fake customer logos as SVGs -->
+          <div class="flex items-center justify-center rounded-xl bg-ink-soft py-6">
+            <svg class="h-8 w-auto text-white/70" viewBox="0 0 100 24" fill="currentColor" aria-hidden="true"><text x="0" y="16" font-size="14" font-family="Inter, sans-serif">FRAGLAB</text></svg>
+          </div>
+          <div class="flex items-center justify-center rounded-xl bg-ink-soft py-6">
+            <svg class="h-8 w-auto text-white/70" viewBox="0 0 100 24" fill="currentColor"><text x="0" y="16" font-size="14">AIMCO</text></svg>
+          </div>
+          <div class="flex items-center justify-center rounded-xl bg-ink-soft py-6">
+            <svg class="h-8 w-auto text-white/70" viewBox="0 0 100 24" fill="currentColor"><text x="0" y="16" font-size="14">SPIKE GG</text></svg>
+          </div>
+          <div class="flex items-center justify-center rounded-xl bg-ink-soft py-6">
+            <svg class="h-8 w-auto text-white/70" viewBox="0 0 100 24" fill="currentColor"><text x="0" y="16" font-size="14">RET AKE</text></svg>
+          </div>
+          <div class="flex items-center justify-center rounded-xl bg-ink-soft py-6">
+            <svg class="h-8 w-auto text-white/70" viewBox="0 0 100 24" fill="currentColor"><text x="0" y="16" font-size="14">ELOBOOST</text></svg>
+          </div>
+          <div class="flex items-center justify-center rounded-xl bg-ink-soft py-6">
+            <svg class="h-8 w-auto text-white/70" viewBox="0 0 100 24" fill="currentColor"><text x="0" y="16" font-size="14">CLUTCH</text></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-16 sm:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="text-3xl sm:text-4xl font-extrabold">Conçu pour gagner</h2>
+          <p class="mt-3 text-white/70">Avantages concrets d’abord — fonctionnalités en soutien.</p>
+        </div>
+
+        <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Card 1 -->
+          <div class="rounded-2xl border border-ink-line bg-ink-soft p-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-bold">+23% de K/D en moyenne</h3>
+              <span class="text-brand">★</span>
+            </div>
+            <p class="mt-2 text-white/70">Plans d’entraînement adaptatifs (15–30 min) centrés sur l’aim, le crosshair placement et les routines de spray.</p>
+            <ul class="mt-4 space-y-2 text-sm text-white/60 list-disc pl-5">
+              <li>Drills dynamiques et suivi quotidien</li>
+              <li>Stats par agent et par carte</li>
+              <li>Rappels intelligents avant les ranked</li>
+            </ul>
+            <a href="#cta" class="mt-6 inline-flex text-sm font-semibold text-brand hover:underline">Commencer maintenant →</a>
+          </div>
+          <!-- Card 2 -->
+          <div class="rounded-2xl border border-ink-line bg-ink-soft p-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-bold">Communication claire</h3>
+              <span class="text-brand">🎧</span>
+            </div>
+            <p class="mt-2 text-white/70">Callouts pré-remplis, ping helpers et checklists de rounds pour réduire le tilt et booster la cohésion.</p>
+            <ul class="mt-4 space-y-2 text-sm text-white/60 list-disc pl-5">
+              <li>Vocabulaires FR pour chaque map</li>
+              <li>Macros push-to-talk</li>
+              <li>Brief de stratégie en 10s</li>
+            </ul>
+            <a href="#cta" class="mt-6 inline-flex text-sm font-semibold text-brand hover:underline">Rejoindre la file →</a>
+          </div>
+          <!-- Card 3 -->
+          <div class="rounded-2xl border border-ink-line bg-ink-soft p-6">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-bold">Setups & line‑ups</h3>
+              <span class="text-brand">🎯</span>
+            </div>
+            <p class="mt-2 text-white/70">Bibliothèque interactive de line‑ups (fumis, flashes, mollies) validée par la communauté, mise à jour en continu.</p>
+            <ul class="mt-4 space-y-2 text-sm text-white/60 list-disc pl-5">
+              <li>Filtres par agent, carte, site</li>
+              <li>Clips courts orientés exécution</li>
+              <li>Notes personnelles synchronisées</li>
+            </ul>
+            <a href="#cta" class="mt-6 inline-flex text-sm font-semibold text-brand hover:underline">Voir les line‑ups →</a>
+          </div>
+        </div>
+
+        <!-- Secondary features row -->
+        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 text-sm">
+          <div class="rounded-xl border border-ink-line bg-ink-softer p-4">🎯 Tracking d’objectifs</div>
+          <div class="rounded-xl border border-ink-line bg-ink-softer p-4">📊 Analyse des démos</div>
+          <div class="rounded-xl border border-ink-line bg-ink-softer p-4">🛡️ Anti-tilt & focus</div>
+          <div class="rounded-xl border border-ink-line bg-ink-softer p-4">⚙️ Personnalisation complète</div>
+        </div>
+
+        <!-- Repeat CTA -->
+        <div class="mt-12 text-center">
+          <a href="#cta" class="inline-flex items-center rounded-2xl bg-brand px-8 py-4 text-lg font-bold shadow-glow hover:brightness-110 active:scale-95">Je m’inscris</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social proof (testimonials) -->
+    <section id="testimonials" class="py-16 border-t border-ink-line/60">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="text-3xl font-extrabold">La communauté en parle</h2>
+          <p class="mt-3 text-white/70">Des joueurs réels, des résultats mesurables.</p>
+        </div>
+
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          <!-- Testimonial Card -->
+          <figure class="rounded-2xl border border-ink-line bg-ink-soft p-6">
+            <div class="flex items-center gap-4">
+              <img alt="Lucas R." class="h-12 w-12 rounded-full" src="https://api.dicebear.com/8.x/thumbs/svg?seed=lucas"/>
+              <figcaption>
+                <p class="font-semibold">Lucas R.</p>
+                <p class="text-xs text-white/60">Immortal 1 → Immortal 3</p>
+              </figcaption>
+            </div>
+            <blockquote class="mt-4 text-white/80">« Les routines de 20 min avant les ranked ont changé ma constance. Le K/D a monté de 0,94 à 1,18 en 3 semaines. »</blockquote>
+          </figure>
+
+          <figure class="rounded-2xl border border-ink-line bg-ink-soft p-6">
+            <div class="flex items-center gap-4">
+              <img alt="Maya S." class="h-12 w-12 rounded-full" src="https://api.dicebear.com/8.x/thumbs/svg?seed=maya"/>
+              <figcaption>
+                <p class="font-semibold">Maya S.</p>
+                <p class="text-xs text-white/60">Ascendant → Radiant (premade)</p>
+              </figcaption>
+            </div>
+            <blockquote class="mt-4 text-white/80">« Les callouts FR + line‑ups m’ont fait gagner un temps fou en IGL. L’équipe suit, les rounds sont propres. »</blockquote>
+          </figure>
+
+          <figure class="rounded-2xl border border-ink-line bg-ink-soft p-6">
+            <div class="flex items-center gap-4">
+              <img alt="Nassim D." class="h-12 w-12 rounded-full" src="https://api.dicebear.com/8.x/thumbs/svg?seed=nassim"/>
+              <figcaption>
+                <p class="font-semibold">Nassim D.</p>
+                <p class="text-xs text-white/60">Agent principal : Sova</p>
+              </figcaption>
+            </div>
+            <blockquote class="mt-4 text-white/80">« La biblio de line‑ups est gold. J’ai des flèches pour chaque plante — clutchs garantis. »</blockquote>
+          </figure>
+        </div>
+
+        <div class="mt-10 text-center">
+          <a href="#cta" class="inline-flex items-center rounded-xl border border-ink-line px-6 py-3 font-semibold hover:bg-ink-soft">Voir plus d’avis</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 sm:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="text-3xl sm:text-4xl font-extrabold">Questions fréquentes</h2>
+          <p class="mt-3 text-white/70">Tout ce que tu dois savoir avant de commencer.</p>
+        </div>
+
+        <div class="mt-10 mx-auto max-w-3xl divide-y divide-ink-line rounded-2xl border border-ink-line bg-ink-soft">
+          <!-- Item -->
+          <details class="group p-6" open>
+            <summary class="flex cursor-pointer list-none items-center justify-between">
+              <span class="font-semibold">Est‑ce compatible avec toutes les plateformes ?</span>
+              <span class="ml-4 transition group-open:rotate-45"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+            </summary>
+            <p class="mt-3 text-white/70">Oui, VALO+ est pensé pour PC. Les contenus (vidéos, line‑ups, checklists) sont accessibles depuis téléphone et tablette en paysage/portrait.</p>
+          </details>
+
+          <details class="group p-6">
+            <summary class="flex cursor-pointer list-none items-center justify-between">
+              <span class="font-semibold">Combien ça coûte ?</span>
+              <span class="ml-4 transition group-open:rotate-45"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+            </summary>
+            <p class="mt-3 text-white/70">Tu peux commencer gratuitement. Des options Pro débloquent l’analyse avancée et le coaching de groupe.</p>
+          </details>
+
+          <details class="group p-6">
+            <summary class="flex cursor-pointer list-none items-center justify-between">
+              <span class="font-semibold">Puis‑je importer mes démos ?</span>
+              <span class="ml-4 transition group-open:rotate-45"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+            </summary>
+            <p class="mt-3 text-white/70">Oui, l’upload de clips est pris en charge. Nous extrayons les moments clés (entry, trades, post‑plant) pour des retours précis.</p>
+          </details>
+
+          <details class="group p-6">
+            <summary class="flex cursor-pointer list-none items-center justify-between">
+              <span class="font-semibold">C’est officiel Valorant ?</span>
+              <span class="ml-4 transition group-open:rotate-45"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+            </summary>
+            <p class="mt-3 text-white/70">Non. VALO+ est une ressource indépendante pour la communauté Valorant. Valorant est une marque de Riot Games, Inc.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="cta" class="py-16 border-t border-ink-line/60 bg-gradient-to-b from-brand/5 to-transparent">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid items-center gap-8 lg:grid-cols-2">
+          <div>
+            <h3 class="text-3xl sm:text-4xl font-extrabold">Prêt à planter le spike ?</h3>
+            <p class="mt-3 text-white/80">Teste VALO+ gratuitement aujourd’hui et rejoins des milliers de joueurs francophones.</p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-3 sm:justify-end">
+            <a href="https://playvalorant.com/fr-fr/" class="inline-flex items-center justify-center rounded-2xl bg-brand px-8 py-4 text-lg font-bold shadow-glow hover:brightness-110 active:scale-95">Créer mon compte</a>
+            <a href="#benefits" class="inline-flex items-center justify-center rounded-2xl border border-ink-line px-8 py-4 font-semibold hover:bg-ink-soft">Voir les fonctionnalités</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-ink-line/60 py-10">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div class="flex items-center gap-3">
+            <svg class="h-7 w-7 text-brand" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5h4l5 7 5-7h4l-9 14L3 5z"/></svg>
+            <p class="text-sm text-white/60">© <span id="year"></span> VALO+. Tous droits réservés. Valorant est une marque de Riot Games, Inc.</p>
+          </div>
+          <ul class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-white/70">
+            <li><a href="#" class="hover:text-brand">Conditions d’utilisation</a></li>
+            <li><a href="#" class="hover:text-brand">Politique de confidentialité</a></li>
+            <li><a href="#faq" class="hover:text-brand">Aide/FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS: menu mobile, année, ancre douce -->
+    <script>
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileNav = document.getElementById('mobileNav');
+      menuBtn?.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Défilement doux
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', (e) => {
+          const target = document.querySelector(a.getAttribute('href'));
+          if(target){ e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+          if(!mobileNav.classList.contains('hidden')) mobileNav.classList.add('hidden');
+        })
+      })
+
+      // Orientation helpers (mobile paysage/portrait)
+      const root = document.documentElement;
+      function setOrientationVars(){
+        const isLandscape = window.matchMedia('(orientation: landscape)').matches;
+        root.style.setProperty('--hero-grid', isLandscape ? 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.04) 1px, transparent 0)' : 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.06) 1px, transparent 0)');
+      }
+      setOrientationVars();
+      addEventListener('orientationchange', setOrientationVars);
+      addEventListener('resize', setOrientationVars);
+    </script>
+  </body>
+</html>

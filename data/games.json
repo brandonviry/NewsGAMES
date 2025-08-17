@@ -1,0 +1,194 @@
+{
+  "games": [
+    {
+      "id": 1,
+      "title": "Fortnite",
+      "subtitle": "Battle Royale",
+      "genre": "Battle Royale",
+      "year": 2017,
+      "developer": "Epic Games",
+      "platform": ["PC", "Console", "Mobile"],
+      "status": "available",
+      "badge": "Populaire",
+      "badgeColor": "#ff6b35",
+      "image": "https://cdn2.unrealengine.com/ecosystem-w-fn-1920x1080-ac7f3aa4b57b.jpg",
+      "description": "Le jeu de battle royale le plus populaire au monde",
+      "rating": 4.2,
+      "releaseDate": "2025-08-17",
+      "url": "bdd/Fortnite/index.html"
+    },
+    {
+      "id": 2,
+      "title": "Call of Duty",
+      "subtitle": "Modern Warfare",
+      "genre": "FPS",
+      "year": 2019,
+      "developer": "Infinity Ward",
+      "platform": ["PC", "PlayStation", "Xbox"],
+      "status": "available",
+      "badge": "Nouveau",
+      "badgeColor": "#00d4aa",
+      "image": "https://japannext.fr/cdn/shop/articles/Images_Blogs_1_ddd98db4-8908-4c31-9870-a4b11bf1bdbc.jpg",
+      "description": "Le retour de la franchise légendaire avec un gameplay moderne",
+      "rating": 4.5,
+      "releaseDate": "2025-08-17",
+      "url": "bdd/Call of Duty/index.html"
+    },
+    {
+      "id": 3,
+      "title": "FIFA 24",
+      "subtitle": "Simulation de football",
+      "genre": "Sport",
+      "year": 2023,
+      "developer": "EA Sports",
+      "platform": ["PC", "PlayStation", "Xbox", "Nintendo Switch"],
+      "status": "available",
+      "badge": "Sport",
+      "badgeColor": "#1e88e5",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToGm1eHwUvt_AL5vyZtK1kBZqJ8Kpg_oLHEg&s",
+      "description": "L'expérience football ultime avec les dernières technologies",
+      "rating": 4.0,
+      "releaseDate": "2025-08-20",
+      "url": "bdd/FIFA 24/index.html"
+    },
+    {
+      "id": 4,
+      "title": "Cyberpunk 2077",
+      "subtitle": "RPG futuriste",
+      "genre": "RPG",
+      "year": 2020,
+      "developer": "CD Projekt Red",
+      "platform": ["PC", "PlayStation", "Xbox"],
+      "status": "available",
+      "badge": "RPG",
+      "badgeColor": "#e91e63",
+      "image": "https://www.nintendo.com/eu/media/images/assets/nintendo_switch_2_games/cyberpunk2077ultimateedition/2x1_NSwitch2_Cyberpunk2077UE.jpg",
+      "description": "Plongez dans Night City, un monde ouvert cyberpunk immersif",
+      "rating": 3.8,
+      "releaseDate": "2025-09-15",
+      "url": "bdd/Cyberpunk 2077/index.html"
+    },
+    {
+      "id": 5,
+      "title": "Minecraft",
+      "subtitle": "Jeu de construction",
+      "genre": "Sandbox",
+      "year": 2011,
+      "developer": "Mojang Studios",
+      "platform": ["PC", "Console", "Mobile"],
+      "status": "available",
+      "badge": "Créatif",
+      "badgeColor": "#4caf50",
+      "image": "https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_switch_4/2x1_NSwitch_Minecraft.jpg",
+      "description": "Construisez, explorez et survivez dans un monde infini",
+      "rating": 4.7,
+      "releaseDate": "2026-02-16",
+      "url": "bdd/Minecraft/index.html"
+    },
+    {
+      "id": 6,
+      "title": "Valorant",
+      "subtitle": "FPS tactique",
+      "genre": "FPS",
+      "year": 2020,
+      "developer": "Riot Games",
+      "platform": ["PC"],
+      "status": "available",
+      "badge": "Compétitif",
+      "badgeColor": "#ff5722",
+      "image": "https://www.larevuedgeek.fr/wp-content/uploads/2024/06/Valorant_Image_Mise_en_Avant.jpg",
+      "description": "FPS tactique 5v5 avec des agents aux capacités uniques",
+      "rating": 4.3,
+      "releaseDate": "2025-12-25",
+      "url": "bdd/Valorant/index.html"
+    },
+    {
+      "id": 7,
+      "title": "The Witcher 3",
+      "subtitle": "Wild Hunt",
+      "genre": "RPG",
+      "year": 2015,
+      "developer": "CD Projekt Red",
+      "platform": ["PC", "PlayStation", "Xbox", "Nintendo Switch"],
+      "status": "available",
+      "badge": "Classique",
+      "badgeColor": "#9c27b0",
+      "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/292030/ad9240e088f953a84aee814034c50a6a92bf4516/header.jpg?t=1749199563",
+      "description": "RPG épique dans un monde fantasy riche et immersif",
+      "rating": 4.9,
+      "releaseDate": "2025-08-16",
+      "url": "bdd/The Witcher 3/index.html"
+    },
+    {
+      "id": 8,
+      "title": "Apex Legends",
+      "subtitle": "Battle Royale",
+      "genre": "Battle Royale",
+      "year": 2019,
+      "developer": "Respawn Entertainment",
+      "platform": ["PC", "PlayStation", "Xbox", "Nintendo Switch"],
+      "status": "available",
+      "badge": "Free-to-Play",
+      "badgeColor": "#ff9800",
+      "image": "https://cdn1.epicgames.com/spt-assets/5dcd88f4e2094a698ebffa43438edc33/apex-legends-1j5jy.jpg",
+      "description": "Battle royale avec des légendes aux capacités uniques",
+      "rating": 4.1,
+      "releaseDate": "2025-08-22",
+      "url": "bdd/Apex Legends/index.html"
+    }
+  ],
+  "categories": [
+    {
+      "id": "battle-royale",
+      "name": "Battle Royale",
+      "color": "#ff6b35"
+    },
+    {
+      "id": "fps",
+      "name": "FPS",
+      "color": "#ff5722"
+    },
+    {
+      "id": "rpg",
+      "name": "RPG",
+      "color": "#e91e63"
+    },
+    {
+      "id": "sport",
+      "name": "Sport",
+      "color": "#1e88e5"
+    },
+    {
+      "id": "sandbox",
+      "name": "Sandbox",
+      "color": "#4caf50"
+    }
+  ],
+  "platforms": [
+    {
+      "id": "pc",
+      "name": "PC",
+      "icon": "💻"
+    },
+    {
+      "id": "playstation",
+      "name": "PlayStation",
+      "icon": "🎮"
+    },
+    {
+      "id": "xbox",
+      "name": "Xbox",
+      "icon": "🎮"
+    },
+    {
+      "id": "nintendo",
+      "name": "Nintendo Switch",
+      "icon": "🎮"
+    },
+    {
+      "id": "mobile",
+      "name": "Mobile",
+      "icon": "📱"
+    }
+  ]
+}

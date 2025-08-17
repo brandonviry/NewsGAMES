@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Witcher 3 — Landing Page FR</title>
+  <meta name="description" content="Landing page responsive en français pour The Witcher 3 : Wild Hunt. Branding sombre, CTA clairs, preuve sociale, bénéfices, FAQ et footer." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🗡️</text></svg>">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Thème Tailwind : palette & typographies (branding)
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#fef2f2',
+              100: '#fde8e8',
+              200: '#fbd5d5',
+              300: '#f8b4b4',
+              400: '#f98080',
+              500: '#e11d48', // carmin
+              600: '#be123c',
+              700: '#9f1239',
+              800: '#7f1d1d',
+              900: '#450a0a'
+            },
+            ink: {
+              50: '#f6f7f8',
+              100: '#e6e8eb',
+              200: '#cfd3d8',
+              300: '#b0b6bf',
+              400: '#88919d',
+              500: '#5e6b78',
+              600: '#3e4854',
+              700: '#2b333d',
+              800: '#1c2229',
+              900: '#0f1318' // presque noir
+            }
+          },
+          fontFamily: {
+            display: ['Cinzel', 'serif'],
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial']
+          },
+          boxShadow: {
+            glow: '0 0 0 3px rgba(225,29,72,0.25)'
+          },
+          backgroundImage: {
+            'hero-texture': 'radial-gradient(1200px 500px at 10% 0%, rgba(225,29,72,0.20), transparent 60%), radial-gradient(900px 400px at 90% 20%, rgba(255,255,255,0.06), transparent 60%)'
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Webfonts (sans tracking) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600..900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Ajustements tablette paysage */
+    @media (orientation: landscape) and (max-width: 1024px) {
+      .landscape-grid { grid-template-columns: 1.1fr 0.9fr; }
+    }
+    /* Effets */
+    .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,0.04); }
+    .stroke-text { -webkit-text-stroke: 1px rgba(255,255,255,0.2); text-shadow: 0 1px 0 rgba(0,0,0,0.4); }
+  </style>
+</head>
+<body class="bg-ink-900 text-white font-sans tracking-tight selection:bg-brand-600 selection:text-white">
+  <!-- Header / Nav -->
+  <header class="sticky top-0 z-50 bg-ink-900/80 glass border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#hero" class="flex items-center gap-3 group" aria-label="Aller au début">
+          <div class="w-9 h-9 rounded-xl bg-brand-600 grid place-content-center shadow-glow">
+            <span class="text-xl">🗡️</span>
+          </div>
+          <div class="leading-tight">
+            <div class="font-display text-lg tracking-wide">Loup&Co</div>
+            <div class="text-xs text-white/60">Expéditions de Sorceleurs</div>
+          </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a class="hover:text-brand-400 transition" href="#benefits">Bénéfices</a>
+          <a class="hover:text-brand-400 transition" href="#social2">Témoignages</a>
+          <a class="hover:text-brand-400 transition" href="#faq">FAQ</a>
+          <a class="px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 transition shadow-glow" href="#cta-final">Jouer maintenant</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden p-2 rounded-lg hover:bg-white/5" aria-expanded="false" aria-controls="mobileMenu" aria-label="Ouvrir le menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/5">
+      <div class="px-4 py-3 space-y-2 text-sm">
+        <a class="block px-3 py-2 rounded-lg hover:bg-white/5" href="#benefits">Bénéfices</a>
+        <a class="block px-3 py-2 rounded-lg hover:bg-white/5" href="#social2">Témoignages</a>
+        <a class="block px-3 py-2 rounded-lg hover:bg-white/5" href="#faq">FAQ</a>
+        <a class="block px-3 py-2 rounded-lg bg-brand-600 hover:bg-brand-500 text-center" href="#cta-final">Jouer maintenant</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-hero-texture pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-28 grid gap-10 lg:grid-cols-2 landscape-grid items-center">
+
+      <div class="space-y-6">
+        <p class="uppercase tracking-[0.2em] text-white/70 text-xs">Jeu vidéo • Action-RPG</p>
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-tight">
+          The Witcher 3: <span class="stroke-text">Wild Hunt</span>
+        </h1>
+        <p class="text-white/80 text-lg max-w-xl">
+          Incarnez Geralt de Riv et explorez un monde ouvert sombre et somptueux. Vos choix façonnent le destin des royaumes — traquez des monstres, honorez vos contrats, vivez une épopée inoubliable.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+          <a href="#cta-final" class="inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-brand-600 hover:bg-brand-500 shadow-glow font-semibold">Jouer maintenant</a>
+          <a href="#trailer" class="inline-flex items-center justify-center px-6 py-3 rounded-2xl border border-white/15 hover:border-white/30">Voir la bande‑annonce</a>
+        </div>
+        <div class="flex items-center gap-6 pt-4 text-sm text-white/70">
+          <div class="flex items-center gap-2">
+            <span class="text-yellow-400">★★★★★</span>
+            <span>4,8/5 • 20k+ avis</span>
+          </div>
+          <div class="hidden sm:block">Élu « Jeu de l’année »</div>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="aspect-[16/9] rounded-2xl overflow-hidden border border-white/10 shadow-2xl" id="trailer">
+          <!-- Remplacez l'URL ci‑dessous par votre vidéo ou image hero -->
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/53MyR_Z3i1w?rel=0&modestbranding=1" title="The Witcher 3 Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p class="mt-3 text-xs text-white/60">Astuce : remplacez l’iframe par une image hero pour de meilleures performances mobiles.</p>
+      </div>
+
+      <!-- Micro social proof -->
+      <div class="lg:col-span-2 border-t border-white/5 pt-8 mt-4">
+        <p class="text-sm text-white/60 mb-4">Plébiscité par des joueurs et la presse :</p>
+        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4 opacity-80">
+          <!-- Logos clients/presse (placeholders SVG) -->
+          <div class="h-12 bg-white/5 rounded-lg grid place-content-center border border-white/10">IGN</div>
+          <div class="h-12 bg-white/5 rounded-lg grid place-content-center border border-white/10">GameSpot</div>
+          <div class="h-12 bg-white/5 rounded-lg grid place-content-center border border-white/10">Metacritic</div>
+          <div class="h-12 bg-white/5 rounded-lg grid place-content-center border border-white/10">RockPaperShotgun</div>
+          <div class="h-12 bg-white/5 rounded-lg grid place-content-center border border-white/10">JV.com</div>
+          <div class="h-12 bg-white/5 rounded-lg grid place-content-center border border-white/10">PC Gamer</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Social proof (logos) already included above -->
+
+  <!-- Benefits Section -->
+  <section id="benefits" class="relative py-16 lg:py-24">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="w-64 h-64 bg-brand-600/20 rounded-full blur-3xl absolute -top-10 -left-10"></div>
+      <div class="w-72 h-72 bg-white/10 rounded-full blur-3xl absolute bottom-0 right-0"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div class="space-y-4">
+          <h2 class="font-display text-3xl sm:text-4xl">Pourquoi vous allez adorer</h2>
+          <p class="text-white/70 max-w-prose">Conçu pour les joueurs qui aiment la liberté et les histoires mémorables. The Witcher 3 équilibre exploration, narration et combat tactique pour une immersion totale.</p>
+          <div class="grid sm:grid-cols-2 gap-4 mt-6">
+            <!-- Benefits (primaires) -->
+            <div class="p-5 rounded-2xl border border-white/10 bg-white/5">
+              <div class="text-2xl mb-2">🌍</div>
+              <h3 class="font-semibold">Monde ouvert vivant</h3>
+              <p class="text-sm text-white/70">Des villes animées aux landes battues par le vent, chaque région réagit à vos choix.</p>
+            </div>
+            <div class="p-5 rounded-2xl border border-white/10 bg-white/5">
+              <div class="text-2xl mb-2">📖</div>
+              <h3 class="font-semibold">Narration ramifiée</h3>
+              <p class="text-sm text-white/70">Des quêtes denses, des conséquences réelles, plusieurs fins possibles.</p>
+            </div>
+            <div class="p-5 rounded-2xl border border-white/10 bg-white/5">
+              <div class="text-2xl mb-2">⚔️</div>
+              <h3 class="font-semibold">Combats exigeants</h3>
+              <p class="text-sm text-white/70">Signe, alchimie, deux épées : domptez chaque affrontement à votre façon.</p>
+            </div>
+            <div class="p-5 rounded-2xl border border-white/10 bg-white/5">
+              <div class="text-2xl mb-2">🧪</div>
+              <h3 class="font-semibold">Progression riche</h3>
+              <p class="text-sm text-white/70">Fabriquez, améliorez, optimisez vos builds et vos huiles de chasse.</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-3 pt-4">
+            <a href="#cta-final" class="px-6 py-3 rounded-2xl bg-brand-600 hover:bg-brand-500 shadow-glow font-semibold">Télécharger</a>
+            <a href="#faq" class="px-6 py-3 rounded-2xl border border-white/15 hover:border-white/30">Questions fréquentes</a>
+          </div>
+        </div>
+
+        <!-- Features (secondaires) -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <div class="p-4 rounded-xl border border-white/10 bg-ink-800/60">
+            <div class="text-xs uppercase text-white/60">Plateformes</div>
+            <div class="mt-2 text-sm">PC, PlayStation, Xbox, Switch*</div>
+          </div>
+          <div class="p-4 rounded-xl border border-white/10 bg-ink-800/60">
+            <div class="text-xs uppercase text-white/60">Mode</div>
+            <div class="mt-2 text-sm">Solo, monde ouvert</div>
+          </div>
+          <div class="p-4 rounded-xl border border-white/10 bg-ink-800/60">
+            <div class="text-xs uppercase text-white/60">Langues</div>
+            <div class="mt-2 text-sm">VO/FR + sous-titres</div>
+          </div>
+          <div class="p-4 rounded-xl border border-white/10 bg-ink-800/60">
+            <div class="text-xs uppercase text-white/60">DLC</div>
+            <div class="mt-2 text-sm">Hearts of Stone, Blood and Wine</div>
+          </div>
+          <div class="p-4 rounded-xl border border-white/10 bg-ink-800/60">
+            <div class="text-xs uppercase text-white/60">Accessibilité</div>
+            <div class="mt-2 text-sm">Sous‑titres, taille police, HUD</div>
+          </div>
+          <div class="p-4 rounded-xl border border-white/10 bg-ink-800/60">
+            <div class="text-xs uppercase text-white/60">PEGI</div>
+            <div class="mt-2 text-sm">18</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof (Testimonials) -->
+  <section id="social2" class="py-16 lg:py-24 border-y border-white/5 bg-gradient-to-b from-ink-900 to-ink-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-3xl sm:text-4xl text-center mb-10">Ils en parlent mieux que nous</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Testimonial Card -->
+        <figure class="p-6 rounded-2xl border border-white/10 bg-white/5">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200" alt="Photo cliente" class="w-10 h-10 rounded-full object-cover" />
+            <figcaption>
+              <div class="font-semibold">Clara M.</div>
+              <div class="text-xs text-white/60">Paris</div>
+            </figcaption>
+          </div>
+          <blockquote class="text-white/80">« Un monde qui semble vraiment <em>vivre</em> sans vous. Je me suis perdue des heures dans les quêtes secondaires. »</blockquote>
+        </figure>
+        <figure class="p-6 rounded-2xl border border-white/10 bg-white/5">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=200" alt="Photo client" class="w-10 h-10 rounded-full object-cover" />
+            <figcaption>
+              <div class="font-semibold">Nassim B.</div>
+              <div class="text-xs text-white/60">Lyon</div>
+            </figcaption>
+          </div>
+          <blockquote class="text-white/80">« Une écriture brillante et des combats gratifiants. Le jeu de rôle à son meilleur. »</blockquote>
+        </figure>
+        <figure class="p-6 rounded-2xl border border-white/10 bg-white/5">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=200" alt="Photo client" class="w-10 h-10 rounded-full object-cover" />
+            <figcaption>
+              <div class="font-semibold">Élodie M.</div>
+              <div class="text-xs text-white/60">Montréal</div>
+            </figcaption>
+          </div>
+          <blockquote class="text-white/80">« Chaque décision compte. J’ai refait la fin deux fois pour voir les conséquences. »</blockquote>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-16 lg:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-3xl sm:text-4xl text-center mb-10">Questions fréquentes</h2>
+      <div class="space-y-3">
+        <!-- FAQ item -->
+        <details class="group border border-white/10 rounded-xl p-5 bg-white/5">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="font-semibold">Le jeu est‑il adapté aux nouveaux joueurs ?</span>
+            <span class="ml-3 transition group-open:rotate-45">+</span>
+          </summary>
+          <div class="pt-3 text-white/80">Oui. Un prologue didactique présente les mécaniques. La difficulté est réglable à tout moment.</div>
+        </details>
+        <details class="group border border-white/10 rounded-xl p-5 bg-white/5">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="font-semibold">Quelle est la durée de vie ?</span>
+            <span class="ml-3 transition group-open:rotate-45">+</span>
+          </summary>
+          <div class="pt-3 text-white/80">La campagne principale offre des dizaines d’heures, et les DLC ajoutent du contenu conséquent pour les amateurs d’exploration.</div>
+        </details>
+        <details class="group border border-white/10 rounded-xl p-5 bg-white/5">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="font-semibold">PC : quelles configurations ?</span>
+            <span class="ml-3 transition group-open:rotate-45">+</span>
+          </summary>
+          <div class="pt-3 text-white/80">Le jeu tourne sur une large gamme de PC. Nous recommandons une carte graphique dédiée et 8 Go de RAM ou plus pour une expérience confortable.</div>
+        </details>
+        <details class="group border border-white/10 rounded-xl p-5 bg-white/5">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="font-semibold">Y a‑t‑il du contenu additionnel ?</span>
+            <span class="ml-3 transition group-open:rotate-45">+</span>
+          </summary>
+          <div class="pt-3 text-white/80">Oui : « Hearts of Stone » et « Blood and Wine » enrichissent l’histoire et apportent de nouvelles zones, équipements et quêtes.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section id="cta-final" class="py-16 lg:py-24 bg-[radial-gradient(800px_300px_at_50%_-20%,_rgba(225,29,72,0.25),_transparent_70%)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl sm:text-4xl mb-4">Prêt à traquer votre prochaine proie ?</h2>
+      <p class="text-white/80 mb-6">Rejoignez des millions de joueurs et écrivez votre légende dans les Royaumes du Nord.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="https://store.steampowered.com/agecheck/app/292030/" class="px-7 py-3 rounded-2xl bg-brand-600 hover:bg-brand-500 shadow-glow font-semibold">Acheter The Witcher 3</a>
+        <a href="#benefits" class="px-7 py-3 rounded-2xl border border-white/15 hover:border-white/30">Voir les fonctionnalités</a>
+      </div>
+      <p class="mt-3 text-xs text-white/60">*Certaines plateformes et options peuvent varier selon la région.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 py-10 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div class="text-white/60">© <span id="year"></span> Loup&Co. Fan‑site concept — non officiel.</div>
+        <ul class="flex flex-wrap gap-4 text-white/70">
+          <li><a class="hover:text-white" href="#">Conditions d’utilisation</a></li>
+          <li><a class="hover:text-white" href="#">Politique de confidentialité</a></li>
+          <li><a class="hover:text-white" href="#">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS minimal -->
+  <script>
+    // Année courante
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menu mobile
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => {
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!expanded));
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Défilement doux vers les ancres
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      })
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apex Legends — Landing Page FR</title>
+  <meta name="description" content="Landing page responsive en français pour Apex Legends. Branding rouge Apex, CTA clairs, preuve sociale, bénéfices, FAQ et footer." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>△</text></svg>">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Thème Tailwind : palette & typographies (branding Apex)
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            apex: {
+              50: '#fff5f5',
+              100: '#ffe3e3',
+              200: '#ffc9c9',
+              300: '#ffa8a8',
+              400: '#ff6b6b',
+              500: '#e11d2e', // Rouge Apex
+              600: '#be1423',
+              700: '#99111d',
+              800: '#750d16',
+              900: '#4a0a0f'
+            },
+            slate: {
+              900: '#0e1116',
+              800: '#151a21',
+              700: '#1c232c'
+            },
+            ember: '#ff7a00'
+          },
+          fontFamily: {
+            display: ['Oswald', 'Impact', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial']
+          },
+          boxShadow: {
+            glow: '0 0 0 3px rgba(225,29,46,0.25)',
+            cta: '0 10px 24px rgba(225,29,46,0.35)'
+          },
+          backgroundImage: {
+            grid: 'linear-gradient(transparent 31px, rgba(255,255,255,0.06) 32px), linear-gradient(90deg, transparent 31px, rgba(255,255,255,0.06) 32px)',
+            diag: 'repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0 12px, transparent 12px 24px)'
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Webfonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Tablette paysage : rééquilibrage grille */
+    @media (orientation: landscape) and (max-width: 1024px) {
+      .landscape-grid { grid-template-columns: 1.1fr 0.9fr; }
+    }
+    .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,0.04); }
+    .badge { border: 1px dashed rgba(255,255,255,0.2); }
+  </style>
+</head>
+<body class="bg-slate-900 text-white font-sans selection:bg-apex-600 selection:text-white">
+  <!-- Header / Nav -->
+  <header class="sticky top-0 z-50 bg-slate-900/85 glass border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#hero" class="flex items-center gap-3 group" aria-label="Aller au début">
+          <div class="w-10 h-10 rounded-lg bg-apex-600 grid place-content-center shadow-glow">
+            <span class="text-xl">△</span>
+          </div>
+          <div class="leading-tight">
+            <div class="font-display text-lg tracking-wide">Outlands Studio</div>
+            <div class="text-xs text-white/60">Expériences Battle Royale</div>
+          </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a class="hover:text-apex-400 transition" href="#benefits">Bénéfices</a>
+          <a class="hover:text-apex-400 transition" href="#social2">Témoignages</a>
+          <a class="hover:text-apex-400 transition" href="#faq">FAQ</a>
+          <a class="px-4 py-2 rounded-xl bg-apex-600 hover:bg-apex-500 transition shadow-cta" href="#cta-final">Jouer maintenant</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden p-2 rounded-lg hover:bg-white/5" aria-expanded="false" aria-controls="mobileMenu" aria-label="Ouvrir le menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/5">
+      <div class="px-4 py-3 space-y-2 text-sm">
+        <a class="block px-3 py-2 rounded-lg hover:bg-white/5" href="#benefits">Bénéfices</a>
+        <a class="block px-3 py-2 rounded-lg hover:bg-white/5" href="#social2">Témoignages</a>
+        <a class="block px-3 py-2 rounded-lg hover:bg-white/5" href="#faq">FAQ</a>
+        <a class="block px-3 py-2 rounded-lg bg-apex-600 hover:bg-apex-500 text-center" href="#cta-final">Jouer maintenant</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid bg-[length:32px_32px] opacity-10 pointer-events-none"></div>
+    <div class="absolute inset-0 bg-diag opacity-20 pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-28 grid gap-10 lg:grid-cols-2 landscape-grid items-center">
+
+      <div class="space-y-6">
+        <p class="uppercase tracking-[0.25em] text-white/70 text-xs">Jeu vidéo • Battle Royale Héroïque</p>
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-tight">
+          Apex Legends
+        </h1>
+        <p class="text-white/85 text-lg max-w-xl">
+          Choisissez votre Légende, combinez vos compétences et dominez les Outlands. Un gameplay rapide, du teamplay et des mises à jour régulières.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+          <a href="#cta-final" class="inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-apex-600 hover:bg-apex-500 shadow-cta font-semibold">Jouer maintenant</a>
+          <a href="#trailer" class="inline-flex items-center justify-center px-6 py-3 rounded-2xl border border-white/15 hover:border-white/30">Voir la bande‑annonce</a>
+        </div>
+        <div class="flex items-center gap-6 pt-4 text-sm text-white/70">
+          <div class="flex items-center gap-2">
+            <span>★★★★★</span>
+            <span>4,7/5 • 45k+ avis</span>
+          </div>
+          <div class="hidden sm:block">Action récompensée à chaque saison</div>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="aspect-[16/9] rounded-2xl overflow-hidden border border-white/10 shadow-2xl" id="trailer">
+          <!-- Remplacez l'URL par votre vidéo/image hero officielle -->
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/UMJb_mkqynU?rel=0&modestbranding=1" title="Apex Legends Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p class="mt-3 text-xs text-white/60">Astuce : utilisez une image hero WebP pour des performances optimales sur mobile.</p>
+      </div>
+
+      <!-- Social proof (logos) -->
+      <div class="lg:col-span-2 border-t border-white/5 pt-8 mt-4">
+        <p class="text-sm text-white/60 mb-4">Plébiscité par des joueurs et médias :</p>
+        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4 opacity-90">
+          <div class="h-12 rounded-xl grid place-content-center border border-white/10 bg-white/5">Respawn</div>
+          <div class="h-12 rounded-xl grid place-content-center border border-white/10 bg-white/5">EA</div>
+          <div class="h-12 rounded-xl grid place-content-center border border-white/10 bg-white/5">IGN</div>
+          <div class="h-12 rounded-xl grid place-content-center border border-white/10 bg-white/5">GameSpot</div>
+          <div class="h-12 rounded-xl grid place-content-center border border-white/10 bg-white/5">JV.com</div>
+          <div class="h-12 rounded-xl grid place-content-center border border-white/10 bg-white/5">PC Gamer</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section id="benefits" class="relative py-16 lg:py-24">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="w-64 h-64 bg-apex-600/25 rounded-full blur-3xl absolute -top-10 -left-10"></div>
+      <div class="w-72 h-72 bg-white/10 rounded-full blur-3xl absolute bottom-0 right-0"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div class="space-y-4">
+          <h2 class="font-display text-3xl sm:text-4xl">Pourquoi vous allez adorer</h2>
+          <p class="text-white/75 max-w-prose">Pensé pour le jeu d’équipe et les clutchs : des Légendes aux pouvoirs uniques, un rythme nerveux et une méta qui évolue.</p>
+          <div class="grid sm:grid-cols-2 gap-4 mt-6">
+            <!-- Benefits (primaires) -->
+            <div class="p-5 rounded-2xl border border-white/10 bg-white/5">
+              <div class="text-2xl mb-2">🛡️</div>
+              <h3 class="font-semibold">Légendes complémentaires</h3>
+              <p class="text-sm text-white/70">Composez un trio synergique pour dominer chaque fight.</p>
+            </div>
+            <div class="p-5 rounded-2xl border border-white/10 bg-white/5">
+              <div class="text-2xl mb-2">⚡</div>
+              <h3 class="font-semibold">Gameplay dynamique</h3>
+              <p class="text-sm text-white/70">Glissades, grappins, rotations : mobilité et micro‑décisions.</p>
+            </div>
+            <div class="p-5 rounded-2xl border border-white/10 bg-white/5">
+              <div class="text-2xl mb-2">🗺️</div>
+              <h3 class="font-semibold">Cartes évolutives</h3>
+              <p class="text-sm text-white/70">Map pool qui tourne, POI et événements saisonniers.</p>
+            </div>
+            <div class="p-5 rounded-2xl border border-white/10 bg-white/5">
+              <div class="text-2xl mb-2">🎯</div>
+              <h3 class="font-semibold">Compétitif</h3>
+              <p class="text-sm text-white/70">Classé, tournois et défis avec récompenses.</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-3 pt-4">
+            <a href="#cta-final" class="px-6 py-3 rounded-2xl bg-apex-600 hover:bg-apex-500 shadow-cta font-semibold">Télécharger</a>
+            <a href="#faq" class="px-6 py-3 rounded-2xl border border-white/15 hover:border-white/30">Questions fréquentes</a>
+          </div>
+        </div>
+
+        <!-- Features (secondaires) -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <div class="p-4 rounded-xl border border-white/10 bg-slate-800/70">
+            <div class="text-xs uppercase text-white/60">Plateformes</div>
+            <div class="mt-2 text-sm">PC, PlayStation, Xbox, Switch</div>
+          </div>
+          <div class="p-4 rounded-xl border border-white/10 bg-slate-800/70">
+            <div class="text-xs uppercase text-white/60">Modes</div>
+            <div class="mt-2 text-sm">Trio, Duo, LTM</div>
+          </div>
+          <div class="p-4 rounded-xl border border-white/10 bg-slate-800/70">
+            <div class="text-xs uppercase text-white/60">Cross‑play</div>
+            <div class="mt-2 text-sm">Selon plateformes</div>
+          </div>
+          <div class="p-4 rounded-xl border border-white/10 bg-slate-800/70">
+            <div class="text-xs uppercase text-white/60">Accessibilité</div>
+            <div class="mt-2 text-sm">Sous‑titres, FOV, options audio</div>
+          </div>
+          <div class="p-4 rounded-xl border border-white/10 bg-slate-800/70">
+            <div class="text-xs uppercase text-white/60">Battle Pass</div>
+            <div class="mt-2 text-sm">Cosmétiques & récompenses</div>
+          </div>
+          <div class="p-4 rounded-xl border border-white/10 bg-slate-800/70">
+            <div class="text-xs uppercase text-white/60">Âge</div>
+            <div class="mt-2 text-sm">PEGI 16</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof (Testimonials) -->
+  <section id="social2" class="py-16 lg:py-24 border-y border-white/5 bg-gradient-to-b from-slate-900 to-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-3xl sm:text-4xl text-center mb-10">Ils en parlent</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <figure class="p-6 rounded-2xl border border-white/10 bg-white/5">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200" alt="Photo cliente" class="w-10 h-10 rounded-full object-cover" />
+            <figcaption>
+              <div class="font-semibold">Anissa T.</div>
+              <div class="text-xs text-white/60">Toulouse</div>
+            </figcaption>
+          </div>
+          <blockquote class="text-white/80">« Les classes se complètent vraiment, chaque partie est différente. »</blockquote>
+        </figure>
+        <figure class="p-6 rounded-2xl border border-white/10 bg-white/5">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=200" alt="Photo client" class="w-10 h-10 rounded-full object-cover" />
+            <figcaption>
+              <div class="font-semibold">Louis P.</div>
+              <div class="text-xs text-white/60">Lille</div>
+            </figcaption>
+          </div>
+          <blockquote class="text-white/80">« La mobilité est incroyable, on ne s’ennuie jamais. »</blockquote>
+        </figure>
+        <figure class="p-6 rounded-2xl border border-white/10 bg-white/5">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=200" alt="Photo client" class="w-10 h-10 rounded-full object-cover" />
+            <figcaption>
+              <div class="font-semibold">Mina R.</div>
+              <div class="text-xs text-white/60">Genève</div>
+            </figcaption>
+          </div>
+          <blockquote class="text-white/80">« Le classé nous pousse à progresser en équipe. »</blockquote>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-16 lg:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-3xl sm:text-4xl text-center mb-10">Questions fréquentes</h2>
+      <div class="space-y-3">
+        <details class="group border border-white/10 rounded-2xl p-5 bg-white/5">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="font-semibold">Le jeu est‑il gratuit ?</span>
+            <span class="ml-3 transition group-open:rotate-45">+</span>
+          </summary>
+          <div class="pt-3 text-white/80">Oui, free‑to‑play. Des éléments cosmétiques et un battle pass sont disponibles.</div>
+        </details>
+        <details class="group border border-white/10 rounded-2xl p-5 bg-white/5">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="font-semibold">Y a‑t‑il du cross‑play ?</span>
+            <span class="ml-3 transition group-open:rotate-45">+</span>
+          </summary>
+          <div class="pt-3 text-white/80">Oui, selon plateformes et paramètres de partie.</div>
+        </details>
+        <details class="group border border-white/10 rounded-2xl p-5 bg-white/5">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="font-semibold">Quelles configs PC ?</span>
+            <span class="ml-3 transition group-open:rotate-45">+</span>
+          </summary>
+          <div class="pt-3 text-white/80">Le jeu tourne sur de nombreux PC. Une carte dédiée améliore la stabilité et les FPS.</div>
+        </details>
+        <details class="group border border-white/10 rounded-2xl p-5 bg-white/5">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="font-semibold">Progression et saisons ?</span>
+            <span class="ml-3 transition group-open:rotate-45">+</span>
+          </summary>
+          <div class="pt-3 text-white/80">Nouvelles légendes, équilibrages, cosmétiques et événements saisonniers.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section id="cta-final" class="py-16 lg:py-24 bg-[radial-gradient(800px_300px_at_50%_-20%,_rgba(225,29,46,0.25),_transparent_70%)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl sm:text-4xl mb-4">Prêt·e à sauter dans l’Anneau ?</h2>
+      <p class="text-white/80 mb-6">Rejoignez des millions de joueurs et grimpez les rangs des Outlands.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="https://store.epicgames.com/fr/p/apex-legends-006cde" class="px-7 py-3 rounded-2xl bg-apex-600 hover:bg-apex-500 shadow-cta font-semibold">Jouer à Apex Legends</a>
+        <a href="#benefits" class="px-7 py-3 rounded-2xl border border-white/15 hover:border-white/30">Voir les fonctionnalités</a>
+      </div>
+      <p class="mt-3 text-xs text-white/60">*Fonctionnalités et options variables selon la plateforme.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 py-10 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div class="text-white/60">© <span id="year"></span> Outlands Studio. Fan‑site concept — non officiel.</div>
+        <ul class="flex flex-wrap gap-4 text-white/70">
+          <li><a class="hover:text-white" href="#">Conditions d’utilisation</a></li>
+          <li><a class="hover:text-white" href="#">Politique de confidentialité</a></li>
+          <li><a class="hover:text-white" href="#">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS minimal -->
+  <script>
+    // Année courante
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menu mobile toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => {
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!expanded));
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Défilement doux
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      })
+    });
+  </script>
+</body>
+</html>

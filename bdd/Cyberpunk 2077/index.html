@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cyberpunk 2077 — Landing Page FR</title>
+  <meta name="description" content="Landing page responsive en français pour Cyberpunk 2077. Branding néon, CTA clairs, preuve sociale, bénéfices, FAQ et footer." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>⚡</text></svg>">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Thème Tailwind : palette & typographies (branding cyberpunk)
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cp: {
+              yellow: '#FCEE09',
+              teal: '#00FFC3',
+              magenta: '#FF3EA5',
+              coal: '#0a0b0d',
+              steel: '#151922'
+            }
+          },
+          fontFamily: {
+            display: ['"Orbitron"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial']
+          },
+          boxShadow: {
+            neon: '0 0 0 3px rgba(252,238,9,0.35)',
+            cta: '0 12px 30px rgba(0,255,195,0.35)'
+          },
+          backgroundImage: {
+            'scanlines': 'repeating-linear-gradient(0deg, rgba(255,255,255,0.04), rgba(255,255,255,0.04) 1px, transparent 1px, transparent 3px)',
+            'grid': 'linear-gradient(transparent 31px, rgba(255,255,255,0.06) 32px), linear-gradient(90deg, transparent 31px, rgba(255,255,255,0.06) 32px)'
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Webfonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=JetBrains+Mono:wght@400;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Tablette paysage : rééquilibrage grille */
+    @media (orientation: landscape) and (max-width: 1024px) {
+      .landscape-grid { grid-template-columns: 1.1fr 0.9fr; }
+    }
+    .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,0.04); }
+    .noise { position: relative; }
+    .noise:before { content: ""; position: absolute; inset: -1px; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/></filter><rect width="120" height="120" filter="url(%23n)" opacity=".05"/></svg>'); pointer-events: none; mix-blend-mode: overlay; }
+    .glitch { position: relative; }
+    .glitch:after, .glitch:before { content: attr(data-text); position: absolute; left: 0; top: 0; pointer-events: none; clip-path: inset(0 0 0 0); }
+    .glitch:before { transform: translate(2px,0); color: #00FFC3; opacity: .7; }
+    .glitch:after { transform: translate(-2px,0); color: #FF3EA5; opacity: .7; }
+  </style>
+</head>
+<body class="bg-cp-coal text-white font-sans selection:bg-cp-yellow selection:text-cp-coal">
+  <!-- Header / Nav -->
+  <header class="sticky top-0 z-50 bg-cp-coal/85 glass border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#hero" class="flex items-center gap-3 group" aria-label="Aller au début">
+          <div class="w-10 h-10 rounded-md bg-cp-yellow grid place-content-center shadow-neon">
+            <span class="text-xl">⚡</span>
+          </div>
+          <div class="leading-tight">
+            <div class="font-display text-base tracking-widest">NeonWorks</div>
+            <div class="text-xs text-white/60">Expériences Night City</div>
+          </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a class="hover:text-cp-teal transition" href="#benefits">Bénéfices</a>
+          <a class="hover:text-cp-teal transition" href="#social2">Témoignages</a>
+          <a class="hover:text-cp-teal transition" href="#faq">FAQ</a>
+          <a class="px-4 py-2 rounded-md bg-cp-yellow text-cp-coal hover:brightness-90 transition shadow-cta font-semibold" href="#cta-final">Jouer maintenant</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden p-2 rounded-md hover:bg-white/5" aria-expanded="false" aria-controls="mobileMenu" aria-label="Ouvrir le menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/5">
+      <div class="px-4 py-3 space-y-2 text-sm">
+        <a class="block px-3 py-2 rounded-md hover:bg-white/5" href="#benefits">Bénéfices</a>
+        <a class="block px-3 py-2 rounded-md hover:bg-white/5" href="#social2">Témoignages</a>
+        <a class="block px-3 py-2 rounded-md hover:bg-white/5" href="#faq">FAQ</a>
+        <a class="block px-3 py-2 rounded-md bg-cp-yellow text-cp-coal hover:brightness-90 text-center" href="#cta-final">Jouer maintenant</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative overflow-hidden noise">
+    <div class="absolute inset-0 bg-scanlines opacity-20 pointer-events-none"></div>
+    <div class="absolute inset-0 bg-grid bg-[length:32px_32px] opacity-10 pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-28 grid gap-10 lg:grid-cols-2 landscape-grid items-center">
+
+      <div class="space-y-6">
+        <p class="uppercase tracking-[0.25em] text-white/70 text-xs">Jeu vidéo • Action‑RPG • Futuriste</p>
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-tight glitch" data-text="Cyberpunk 2077">
+          Cyberpunk 2077
+        </h1>
+        <p class="text-white/85 text-lg max-w-xl">
+          Entrez à Night City. Améliorez votre cyberware, faites vos choix et façonnez votre légende dans une mégalopole obsédée par le pouvoir et le style.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+          <a href="#cta-final" class="inline-flex items-center justify-center px-6 py-3 rounded-md bg-cp-yellow text-cp-coal hover:brightness-90 font-semibold shadow-neon">Jouer maintenant</a>
+          <a href="#trailer" class="inline-flex items-center justify-center px-6 py-3 rounded-md border border-white/15 hover:border-white/30">Voir la bande‑annonce</a>
+        </div>
+        <div class="flex items-center gap-6 pt-4 text-sm text-white/70">
+          <div class="flex items-center gap-2">
+            <span>★★★★★</span>
+            <span>4,8/5 • 50k+ avis</span>
+          </div>
+          <div class="hidden sm:block">DLC « Phantom Liberty » disponible</div>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="aspect-[16/9] rounded-lg overflow-hidden border border-white/10 shadow-2xl" id="trailer">
+          <!-- Remplacez l'URL par votre vidéo officielle -->
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/qIcTM8WXFjk?rel=0&modestbranding=1" title="Cyberpunk 2077 Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p class="mt-3 text-xs text-white/60">Astuce : préférez une image hero WebP pour booster le chargement mobile.</p>
+      </div>
+
+      <!-- Social proof logos (micro) -->
+      <div class="lg:col-span-2 border-t border-white/5 pt-8 mt-4">
+        <p class="text-sm text-white/60 mb-4">Approuvé par des joueurs et médias :</p>
+        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4 opacity-85">
+          <div class="h-12 rounded-md grid place-content-center border border-white/10 bg-white/5">CDPR</div>
+          <div class="h-12 rounded-md grid place-content-center border border-white/10 bg-white/5">IGN</div>
+          <div class="h-12 rounded-md grid place-content-center border border-white/10 bg-white/5">GameSpot</div>
+          <div class="h-12 rounded-md grid place-content-center border border-white/10 bg-white/5">Metacritic</div>
+          <div class="h-12 rounded-md grid place-content-center border border-white/10 bg-white/5">JV.com</div>
+          <div class="h-12 rounded-md grid place-content-center border border-white/10 bg-white/5">PC Gamer</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section id="benefits" class="relative py-16 lg:py-24">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="w-64 h-64 bg-cp-teal/25 rounded-full blur-3xl absolute -top-10 -left-10"></div>
+      <div class="w-72 h-72 bg-cp-magenta/20 rounded-full blur-3xl absolute bottom-0 right-0"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div class="space-y-4">
+          <h2 class="font-display text-3xl sm:text-4xl">Pourquoi vous allez adorer</h2>
+          <p class="text-white/75 max-w-prose">Un RPG de caractère où vos augmentations, vos choix et vos alliances déterminent le récit. Combattez, piratez, infiltrez : à vous de choisir l’approche.</p>
+          <div class="grid sm:grid-cols-2 gap-4 mt-6">
+            <!-- Benefits (primaires) -->
+            <div class="p-5 rounded-lg border border-white/10 bg-white/5">
+              <div class="text-2xl mb-2">🛠️</div>
+              <h3 class="font-semibold">Cyberware évolutif</h3>
+              <p class="text-sm text-white/70">Remplacez vos limites humaines par des implants puissants.</p>
+            </div>
+            <div class="p-5 rounded-lg border border-white/10 bg-white/5">
+              <div class="text-2xl mb-2">🕶️</div>
+              <h3 class="font-semibold">Style & rôle</h3>
+              <p class="text-sm text-white/70">Solo, Netrunner ou Techie : spécialisez‑vous et imposez votre vibe.</p>
+            </div>
+            <div class="p-5 rounded-lg border border-white/10 bg-white/5">
+              <div class="text-2xl mb-2">🌆</div>
+              <h3 class="font-semibold">Night City vivante</h3>
+              <p class="text-sm text-white/70">Quartiers emblématiques, factions et activités à chaque coin de rue.</p>
+            </div>
+            <div class="p-5 rounded-lg border border-white/10 bg-white/5">
+              <div class="text-2xl mb-2">🔓</div>
+              <h3 class="font-semibold">Approches multiples</h3>
+              <p class="text-sm text-white/70">Infiltration, piratage, combat direct… ou tout à la fois.</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-3 pt-4">
+            <a href="#cta-final" class="px-6 py-3 rounded-md bg-cp-yellow text-cp-coal hover:brightness-90 shadow-neon font-semibold">Télécharger</a>
+            <a href="#faq" class="px-6 py-3 rounded-md border border-white/15 hover:border-white/30">Questions fréquentes</a>
+          </div>
+        </div>
+
+        <!-- Features (secondaires) -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <div class="p-4 rounded-md border border-white/10 bg-cp-steel/60">
+            <div class="text-xs uppercase text-white/60">Plateformes</div>
+            <div class="mt-2 text-sm">PC, PlayStation, Xbox</div>
+          </div>
+          <div class="p-4 rounded-md border border-white/10 bg-cp-steel/60">
+            <div class="text-xs uppercase text-white/60">Modes</div>
+            <div class="mt-2 text-sm">Solo, Monde ouvert</div>
+          </div>
+          <div class="p-4 rounded-md border border-white/10 bg-cp-steel/60">
+            <div class="text-xs uppercase text-white/60">Extension</div>
+            <div class="mt-2 text-sm">Phantom Liberty</div>
+          </div>
+          <div class="p-4 rounded-md border border-white/10 bg-cp-steel/60">
+            <div class="text-xs uppercase text-white/60">Accessibilité</div>
+            <div class="mt-2 text-sm">Sous‑titres, options HUD, difficulté</div>
+          </div>
+          <div class="p-4 rounded-md border border-white/10 bg-cp-steel/60">
+            <div class="text-xs uppercase text-white/60">Graphismes</div>
+            <div class="mt-2 text-sm">Ray tracing*, DLSS/FSR</div>
+          </div>
+          <div class="p-4 rounded-md border border-white/10 bg-cp-steel/60">
+            <div class="text-xs uppercase text-white/60">Âge</div>
+            <div class="mt-2 text-sm">PEGI 18</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof (Testimonials) -->
+  <section id="social2" class="py-16 lg:py-24 border-y border-white/5 bg-gradient-to-b from-cp-coal to-cp-steel">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-3xl sm:text-4xl text-center mb-10">Ils en parlent</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <figure class="p-6 rounded-lg border border-white/10 bg-white/5">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200" alt="Photo cliente" class="w-10 h-10 rounded object-cover" />
+            <figcaption>
+              <div class="font-semibold">Aïda K.</div>
+              <div class="text-xs text-white/60">Lille</div>
+            </figcaption>
+          </div>
+          <blockquote class="text-white/80">« Une ambiance unique et un récit qui s’adapte à mes décisions. »</blockquote>
+        </figure>
+        <figure class="p-6 rounded-lg border border-white/10 bg-white/5">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=200" alt="Photo client" class="w-10 h-10 rounded object-cover" />
+            <figcaption>
+              <div class="font-semibold">Mehdi Z.</div>
+              <div class="text-xs text-white/60">Rabat</div>
+            </figcaption>
+          </div>
+          <blockquote class="text-white/80">« Les builds cyberware changent vraiment la manière de jouer. »</blockquote>
+        </figure>
+        <figure class="p-6 rounded-lg border border-white/10 bg-white/5">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=200" alt="Photo client" class="w-10 h-10 rounded object-cover" />
+            <figcaption>
+              <div class="font-semibold">Zoé P.</div>
+              <div class="text-xs text-white/60">Montréal</div>
+            </figcaption>
+          </div>
+          <blockquote class="text-white/80">« Night City est la vraie star. On y retourne sans cesse. »</blockquote>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-16 lg:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-3xl sm:text-4xl text-center mb-10">Questions fréquentes</h2>
+      <div class="space-y-3">
+        <details class="group border border-white/10 rounded-md p-5 bg-white/5">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="font-semibold">Faut‑il connaître l’univers The Witcher ?</span>
+            <span class="ml-3 transition group-open:rotate-45">+</span>
+          </summary>
+          <div class="pt-3 text-white/80">Non, l’histoire est indépendante. Des références existent mais ne sont pas nécessaires.</div>
+        </details>
+        <details class="group border border-white/10 rounded-md p-5 bg-white/5">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="font-semibold">Quelle est la difficulté ?</span>
+            <span class="ml-3 transition group-open:rotate-45">+</span>
+          </summary>
+          <div class="pt-3 text-white/80">Plusieurs niveaux ajustables à tout moment, du narratif au très exigeant.</div>
+        </details>
+        <details class="group border border-white/10 rounded-md p-5 bg-white/5">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="font-semibold">Quelles configs PC ?</span>
+            <span class="ml-3 transition group-open:rotate-45">+</span>
+          </summary>
+          <div class="pt-3 text-white/80">Le jeu bénéficie de technologies de mise à l’échelle. Une carte dédiée récente est recommandée pour le ray tracing.</div>
+        </details>
+        <details class="group border border-white/10 rounded-md p-5 bg-white/5">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="font-semibold">Le DLC Phantom Liberty est‑il inclus ?</span>
+            <span class="ml-3 transition group-open:rotate-45">+</span>
+          </summary>
+          <div class="pt-3 text-white/80">Selon l’édition. Vérifiez le contenu au moment de l’achat.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section id="cta-final" class="py-16 lg:py-24 bg-[radial-gradient(800px_300px_at_50%_-20%,_rgba(252,238,9,0.25),_transparent_70%)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl sm:text-4xl mb-4">Prêt·e pour la légende de Night City ?</h2>
+      <p class="text-white/80 mb-6">Rejoignez des millions de joueurs et réécrivez les règles de la ville.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="https://store.steampowered.com/agecheck/app/1091500/" class="px-7 py-3 rounded-md bg-cp-yellow text-cp-coal hover:brightness-90 shadow-cta font-semibold">Acheter Cyberpunk 2077</a>
+        <a href="#benefits" class="px-7 py-3 rounded-md border border-white/15 hover:border-white/30">Voir les fonctionnalités</a>
+      </div>
+      <p class="mt-3 text-xs text-white/60">*Certaines fonctionnalités varient selon la plateforme et le matériel.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 py-10 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div class="text-white/60">© <span id="year"></span> NeonWorks. Fan‑site concept — non officiel.</div>
+        <ul class="flex flex-wrap gap-4 text-white/70">
+          <li><a class="hover:text-white" href="#">Conditions d’utilisation</a></li>
+          <li><a class="hover:text-white" href="#">Politique de confidentialité</a></li>
+          <li><a class="hover:text-white" href="#">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS minimal -->
+  <script>
+    // Année courante
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menu mobile toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => {
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!expanded));
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Défilement doux
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      })
+    });
+  </script>
+</body>
+</html>

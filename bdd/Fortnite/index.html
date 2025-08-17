@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fortnite — Landing Page FR</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ["Anton", "Impact", "system-ui", "Arial", "sans-serif"],
+              sans: [
+                "Inter",
+                "ui-sans-serif",
+                "system-ui",
+                "-apple-system",
+                "Segoe UI",
+                "Roboto",
+                "Helvetica Neue",
+                "Arial",
+                "Noto Sans",
+                "sans-serif",
+              ],
+            },
+            colors: {
+              brand: {
+                50: "#eef2ff",
+                100: "#e0e7ff",
+                200: "#c7d2fe",
+                300: "#a5b4fc",
+                400: "#818cf8",
+                500: "#6366f1", // indigo base
+                600: "#5146f0",
+                700: "#4338ca",
+                800: "#3730a3",
+                900: "#312e81",
+              },
+              accent: {
+                500: "#facc15", // yellow
+                600: "#eab308",
+                700: "#ca8a04",
+              },
+            },
+            boxShadow: {
+              glow: "0 0 40px rgba(99,102,241,0.45)",
+            },
+            backgroundImage: {
+              grid: "radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- SEO / Social -->
+    <meta name="description" content="Rejoignez l'action dans Fortnite. Découvrez les nouveautés, les modes et commencez à jouer en un clic." />
+    <meta property="og:title" content="Fortnite — Rejoignez l'action" />
+    <meta property="og:description" content="Découvrez les nouveautés, les modes et commencez à jouer en un clic." />
+    <meta property="og:type" content="website" />
+
+    <style>
+      /* Subtle animated gradient background */
+      .animated-gradient {
+        background: radial-gradient(60% 60% at 20% 10%, rgba(99, 102, 241, .35), transparent 60%),
+                    radial-gradient(40% 40% at 80% 20%, rgba(147, 51, 234, .35), transparent 60%),
+                    linear-gradient(135deg, #0b1023 0%, #0f172a 60%, #111827 100%);
+      }
+      .glass {
+        background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.18);
+      }
+      .mask-fade {
+        -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent);
+                mask-image: linear-gradient(to bottom, black 70%, transparent);
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-slate-950 text-white animated-gradient">
+    <!-- Sticky Nav -->
+    <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-slate-950/60 border-b border-white/10">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="#" class="flex items-center gap-3 group" aria-label="Accueil">
+          <!-- Company logo (custom SVG) -->
+          <svg class="h-8 w-8 text-accent-500 group-hover:scale-110 transition" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.88L18.18 22 12 18.76 5.82 22 7 14.15l-5-4.88 6.91-1.01L12 2z"/></svg>
+          <span class="font-display text-2xl tracking-wide">Stormbyte</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#benefices" class="hover:text-accent-500">Bénéfices</a>
+          <a href="#temoignages" class="hover:text-accent-500">Avis</a>
+          <a href="#faq" class="hover:text-accent-500">FAQ</a>
+          <a href="#cta-final" class="px-4 py-2 rounded-xl bg-accent-500 text-slate-900 font-semibold hover:bg-accent-600 transition">Jouer maintenant</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-xl p-2 hover:bg-white/5" aria-controls="mobileMenu" aria-expanded="false">
+          <span class="sr-only">Ouvrir le menu</span>
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+      <div id="mobileMenu" class="md:hidden hidden border-t border-white/10">
+        <div class="px-4 py-3 flex flex-col gap-2">
+          <a href="#benefices" class="py-2">Bénéfices</a>
+          <a href="#temoignages" class="py-2">Avis</a>
+          <a href="#faq" class="py-2">FAQ</a>
+          <a href="https://www.fortnite.com/download?lang=fr" class="py-2 px-4 rounded-lg bg-accent-500 text-slate-900 font-semibold text-center">Jouer maintenant</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden">
+      <!-- background decorative grid -->
+      <div class="absolute inset-0 opacity-30" style="background-size: 24px 24px; background-image: radial-gradient(rgba(255,255,255,0.12) 1px, transparent 1px);"></div>
+
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14 pb-24 md:pt-20 lg:pt-28 lg:pb-32 grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/20 bg-white/5 text-xs">#BattleRoyale <span class="h-1 w-1 rounded-full bg-accent-500"></span> #Créatif</div>
+          <h1 class="mt-5 font-display text-5xl sm:text-6xl leading-[1.05]">
+            <span class="block">Plongez dans</span>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-fuchsia-400 to-accent-500 drop-shadow">FORTNITE</span>
+          </h1>
+          <p class="mt-5 text-lg text-white/80 max-w-xl">Des combats frénétiques, des îles créatives et des mises à jour régulières. Rejoignez des millions de joueurs et faites équipe pour décrocher la Victoire Royale.</p>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="https://www.fortnite.com/download?lang=fr" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl bg-accent-500 text-slate-900 font-semibold shadow-glow hover:translate-y-[-1px] transition">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M3 22v-6l15-9 3 3-15 9H3z"/></svg>
+              Jouer maintenant
+            </a>
+            <a href="https://youtu.be/03Bmk6q4y4g?si=YGw5Sz4uq3yJeeds" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl border border-white/20 hover:bg-white/5 transition">Voir la bande-annonce</a>
+          </div>
+
+          <!-- Reviews microcopy -->
+          <div class="mt-6 flex items-center gap-4 text-sm">
+            <div class="flex -space-x-2">
+              <!-- simple avatar placeholders -->
+              <div class="h-8 w-8 rounded-full bg-white/10 border border-white/20 grid place-items-center">🎮</div>
+              <div class="h-8 w-8 rounded-full bg-white/10 border border-white/20 grid place-items-center">⭐</div>
+              <div class="h-8 w-8 rounded-full bg-white/10 border border-white/20 grid place-items-center">🔥</div>
+            </div>
+            <p class="text-white/70">Note moyenne <span class="text-white">4,8/5</span> — plus de 50k avis</p>
+          </div>
+        </div>
+
+        <!-- Image / Video -->
+        <div class="relative">
+          <div id="video" class="aspect-video rounded-3xl overflow-hidden shadow-glow glass">
+            <!-- Replace the poster/video source by vos médias -->
+            <embed 
+            src="https://www.youtube.com/embed/Ca6oepECXHs?autoplay=1&loop=1&mute=1&playlist=Ca6oepECXHs"
+            class="w-full h-full"
+            >
+          
+            <div class="absolute inset-0 pointer-events-none bg-gradient-to-t from-slate-950/60"></div>
+          </div>
+          <!-- Floating card -->
+          <div class="absolute -bottom-6 left-6 right-6 glass rounded-2xl p-4 flex items-center justify-between">
+            <div>
+              <p class="text-xs uppercase tracking-wider text-white/60">En direct</p>
+              <p class="font-semibold">Événements hebdo & mises à jour</p>
+            </div>
+            <span class="inline-flex items-center gap-2 text-slate-900 bg-accent-500 px-3 py-1 rounded-xl text-sm font-semibold">⏱️ Régulier</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Customer logos (Social proof) -->
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16">
+        <p class="text-center text-white/60 text-sm">Vu chez</p>
+        <div class="mt-5 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-6 opacity-80">
+          <!-- Simple text logos as placeholders -->
+          <div class="glass rounded-xl p-4 text-center font-semibold">GameSpot</div>
+          <div class="glass rounded-xl p-4 text-center font-semibold">IGN</div>
+          <div class="glass rounded-xl p-4 text-center font-semibold">PC Gamer</div>
+          <div class="glass rounded-xl p-4 text-center font-semibold">JV.com</div>
+          <div class="glass rounded-xl p-4 text-center font-semibold">The Verge</div>
+          <div class="glass rounded-xl p-4 text-center font-semibold">Kotaku</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefices" class="relative py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl">
+          <h2 class="font-display text-4xl">Pourquoi vous allez adorer</h2>
+          <p class="mt-3 text-white/70">Des bénéfices concrets pour tous les styles de jeu. Les fonctionnalités ne sont que la cerise sur le gâteau.</p>
+        </div>
+
+        <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Benefit 1 -->
+          <article class="glass rounded-2xl p-6">
+            <div class="h-12 w-12 rounded-xl bg-brand-500/20 grid place-items-center mb-4"><span>⚔️</span></div>
+            <h3 class="text-xl font-semibold">Action immédiate</h3>
+            <p class="mt-2 text-white/70">Lancez une partie en quelques secondes et plongez dans des combats rapides, fluides et spectaculaires.</p>
+            <ul class="mt-4 text-sm text-white/60 list-disc list-inside">
+              <li>Matchmaking rapide</li>
+              <li>Serveurs mondiaux</li>
+              <li>Modes temporaires</li>
+            </ul>
+            <a href="#cta-final" class="mt-5 inline-flex text-accent-500 hover:underline">Commencer maintenant →</a>
+          </article>
+
+          <!-- Benefit 2 -->
+          <article class="glass rounded-2xl p-6">
+            <div class="h-12 w-12 rounded-xl bg-brand-500/20 grid place-items-center mb-4"><span>🎨</span></div>
+            <h3 class="text-xl font-semibold">Créativité sans limites</h3>
+            <p class="mt-2 text-white/70">Construisez vos propres îles, créez des expériences et partagez-les avec la communauté.</p>
+            <ul class="mt-4 text-sm text-white/60 list-disc list-inside">
+              <li>Outils puissants</li>
+              <li>Partage facile</li>
+              <li>Éditeur intuitif</li>
+            </ul>
+            <a href="#cta-final" class="mt-5 inline-flex text-accent-500 hover:underline">Créer une île →</a>
+          </article>
+
+          <!-- Benefit 3 -->
+          <article class="glass rounded-2xl p-6">
+            <div class="h-12 w-12 rounded-xl bg-brand-500/20 grid place-items-center mb-4"><span>🤝</span></div>
+            <h3 class="text-xl font-semibold">Jouez ensemble</h3>
+            <p class="mt-2 text-white/70">Rejoignez vos amis sur toutes les plateformes et restez connectés avec le chat vocal.</p>
+            <ul class="mt-4 text-sm text-white/60 list-disc list-inside">
+              <li>Cross‑play</li>
+              <li>Groupes faciles</li>
+              <li>Événements coop</li>
+            </ul>
+            <a href="#cta-final" class="mt-5 inline-flex text-accent-500 hover:underline">Inviter des amis →</a>
+          </article>
+        </div>
+
+        <!-- Feature highlights -->
+        <div class="mt-12 grid md:grid-cols-3 gap-6 text-sm text-white/70">
+          <div class="glass rounded-xl p-4">Mises à jour fréquentes</div>
+          <div class="glass rounded-xl p-4">Passe de combat & récompenses</div>
+          <div class="glass rounded-xl p-4">Événements live spectaculaires</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof: Testimonials -->
+    <section id="temoignages" class="py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex items-end justify-between gap-6">
+          <div>
+            <h2 class="font-display text-4xl">Ils en parlent mieux que nous</h2>
+            <p class="mt-2 text-white/70">Des joueurs et créateurs partagent leur expérience.</p>
+          </div>
+          <div class="hidden md:flex gap-2">
+            <button id="prevBtn" class="rounded-xl border border-white/15 px-3 py-2 hover:bg-white/5">◀</button>
+            <button id="nextBtn" class="rounded-xl border border-white/15 px-3 py-2 hover:bg-white/5">▶</button>
+          </div>
+        </div>
+
+        <div class="mt-8 overflow-hidden">
+          <div id="carousel" class="grid grid-flow-col auto-cols-[100%] md:auto-cols-[50%] lg:auto-cols-[33.333%] gap-6 transition-transform duration-500">
+            <!-- Card 1 -->
+            <figure class="glass rounded-2xl p-6 flex flex-col gap-4">
+              <div class="flex items-center gap-3">
+                <div class="h-10 w-10 rounded-full bg-white/10 grid place-items-center">👩‍💻</div>
+                <figcaption>
+                  <p class="font-semibold">Camille R.</p>
+                  <p class="text-sm text-white/60">Créatrice d'îles</p>
+                </figcaption>
+              </div>
+              <blockquote class="text-white/80">« L'éditeur créatif est super accessible. J'ai publié ma première carte en un week‑end ! »</blockquote>
+            </figure>
+            <!-- Card 2 -->
+            <figure class="glass rounded-2xl p-6 flex flex-col gap-4">
+              <div class="flex items-center gap-3">
+                <div class="h-10 w-10 rounded-full bg-white/10 grid place-items-center">🛡️</div>
+                <figcaption>
+                  <p class="font-semibold">Malik S.</p>
+                  <p class="text-sm text-white/60">Joueur compétitif</p>
+                </figcaption>
+              </div>
+              <blockquote class="text-white/80">« Gameplay nerveux, netcode solide et des events qui donnent envie de revenir. »</blockquote>
+            </figure>
+            <!-- Card 3 -->
+            <figure class="glass rounded-2xl p-6 flex flex-col gap-4">
+              <div class="flex items-center gap-3">
+                <div class="h-10 w-10 rounded-full bg-white/10 grid place-items-center">🎥</div>
+                <figcaption>
+                  <p class="font-semibold">Zoé L.</p>
+                  <p class="text-sm text-white/60">Streameuse</p>
+                </figcaption>
+              </div>
+              <blockquote class="text-white/80">« Parfait pour jouer avec la commu : facile à lancer, fun à regarder. »</blockquote>
+            </figure>
+            <!-- Card 4 -->
+            <figure class="glass rounded-2xl p-6 flex flex-col gap-4">
+              <div class="flex items-center gap-3">
+                <div class="h-10 w-10 rounded-full bg-white/10 grid place-items-center">🧭</div>
+                <figcaption>
+                  <p class="font-semibold">Noah T.</p>
+                  <p class="text-sm text-white/60">Explorateur d'îles</p>
+                </figcaption>
+              </div>
+              <blockquote class="text-white/80">« La variété des cartes créées par la communauté est incroyable. »</blockquote>
+            </figure>
+          </div>
+        </div>
+
+        <div class="mt-6 flex md:hidden justify-center gap-3">
+          <button id="prevBtnSm" class="rounded-xl border border-white/15 px-3 py-2 hover:bg-white/5">◀</button>
+          <button id="nextBtnSm" class="rounded-xl border border-white/15 px-3 py-2 hover:bg-white/5">▶</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 class="font-display text-4xl">Questions fréquentes</h2>
+        <div class="mt-8 grid md:grid-cols-2 gap-6">
+          <!-- Item -->
+          <details class="group glass rounded-2xl p-6">
+            <summary class="cursor-pointer list-none flex items-center justify-between">
+              <span class="font-semibold">Fortnite est‑il gratuit ?</span>
+              <span class="transition group-open:rotate-180">⌄</span>
+            </summary>
+            <p class="mt-3 text-white/70">Oui, le Battle Royale et les expériences créatives sont gratuits. Des achats cosmétiques facultatifs sont disponibles.</p>
+          </details>
+          <!-- Item -->
+          <details class="group glass rounded-2xl p-6">
+            <summary class="cursor-pointer list-none flex items-center justify-between">
+              <span class="font-semibold">Sur quelles plateformes puis‑je jouer ?</span>
+              <span class="transition group-open:rotate-180">⌄</span>
+            </summary>
+            <p class="mt-3 text-white/70">PC, PlayStation, Xbox, Nintendo Switch et mobile (selon disponibilité). Le cross‑play est pris en charge.</p>
+          </details>
+          <!-- Item -->
+          <details class="group glass rounded-2xl p-6">
+            <summary class="cursor-pointer list-none flex items-center justify-between">
+              <span class="font-semibold">Faut‑il un abonnement pour jouer en ligne ?</span>
+              <span class="transition group-open:rotate-180">⌄</span>
+            </summary>
+            <p class="mt-3 text-white/70">Selon la plateforme, un abonnement en ligne peut être requis. Renseignez‑vous auprès de votre fournisseur.</p>
+          </details>
+          <!-- Item -->
+          <details class="group glass rounded-2xl p-6">
+            <summary class="cursor-pointer list-none flex items-center justify-between">
+              <span class="font-semibold">Puis‑je désactiver le chat vocal ?</span>
+              <span class="transition group-open:rotate-180">⌄</span>
+            </summary>
+            <p class="mt-3 text-white/70">Oui, des options de contrôle et de confidentialité sont disponibles dans les paramètres.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="cta-final" class="py-20">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center glass rounded-3xl p-10">
+        <h2 class="font-display text-4xl">Prêt à décrocher votre première Victoire Royale ?</h2>
+        <p class="mt-3 text-white/70">Installez le jeu, rejoignez vos amis et sautez du bus de combat.</p>
+        <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="https://www.fortnite.com/download?lang=fr" class="px-6 py-3 rounded-2xl bg-accent-500 text-slate-900 font-semibold shadow-glow hover:translate-y-[-1px] transition">Télécharger</a>
+          <a href="#benefices" class="px-6 py-3 rounded-2xl border border-white/20 hover:bg-white/5 transition">Découvrir les modes</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pt-10 pb-16 border-t border-white/10">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8 text-sm">
+        <div>
+          <div class="flex items-center gap-3">
+            <svg class="h-7 w-7 text-accent-500" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.88L18.18 22 12 18.76 5.82 22 7 14.15l-5-4.88 6.91-1.01L12 2z"/></svg>
+            <span class="font-display text-xl">Stormbyte</span>
+          </div>
+          <p class="mt-3 text-white/60">Fan‑site non officiel. Fortnite est une marque d'Epic Games, Inc. Ce site n'est pas affilié à Epic Games.</p>
+        </div>
+        <div>
+          <p class="font-semibold mb-2">Légal</p>
+          <ul class="space-y-2 text-white/70">
+            <li><a href="#" class="hover:text-accent-500">Conditions générales</a></li>
+            <li><a href="#" class="hover:text-accent-500">Politique de confidentialité</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-semibold mb-2">Ressources</p>
+          <ul class="space-y-2 text-white/70">
+            <li><a href="#" class="hover:text-accent-500">Support & sécurité</a></li>
+            <li><a href="#" class="hover:text-accent-500">Accessibilité</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-semibold mb-2">Réseaux</p>
+          <ul class="space-y-2 text-white/70">
+            <li><a href="#" class="hover:text-accent-500">Twitter/X</a></li>
+            <li><a href="#" class="hover:text-accent-500">YouTube</a></li>
+            <li><a href="#" class="hover:text-accent-500">Discord</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-10 text-center text-white/50 text-xs">© <span id="year"></span> Stormbyte — Tous droits réservés.</div>
+    </footer>
+
+    <!-- Minimal JS -->
+    <script>
+      // Mobile menu toggle
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      if (menuBtn) {
+        menuBtn.addEventListener('click', () => {
+          const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+          menuBtn.setAttribute('aria-expanded', String(!expanded));
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+
+      // Testimonial carousel (simple translate X)
+      const carousel = document.getElementById('carousel');
+      const prevBtns = [document.getElementById('prevBtn'), document.getElementById('prevBtnSm')].filter(Boolean);
+      const nextBtns = [document.getElementById('nextBtn'), document.getElementById('nextBtnSm')].filter(Boolean);
+      let index = 0;
+      function updateCarousel() {
+        const width = carousel.children[0].getBoundingClientRect().width + 24; // card width + gap approx
+        carousel.style.transform = `translateX(${-index * width}px)`;
+      }
+      nextBtns.forEach(b => b.addEventListener('click', () => { index = Math.min(index + 1, carousel.children.length - 1); updateCarousel(); }));
+      prevBtns.forEach(b => b.addEventListener('click', () => { index = Math.max(index - 1, 0); updateCarousel(); }));
+      window.addEventListener('resize', updateCarousel);
+
+      // Smooth scroll for in‑page anchors
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+          const targetId = a.getAttribute('href').substring(1);
+          const target = document.getElementById(targetId);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      // Current year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

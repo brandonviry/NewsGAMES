@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Minecraft — Landing Page FR</title>
+  <meta name="description" content="Landing page responsive en français pour Minecraft. Branding voxel, CTA clairs, preuve sociale, bénéfices, FAQ et footer." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🧱</text></svg>">
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Thème Tailwind : palette & typographies (branding Minecraft‑like)
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            craft: {
+              50: '#f1f8f4',
+              100: '#dfeee6',
+              200: '#bfe0cc',
+              300: '#9cd1b1',
+              400: '#66b988',
+              500: '#2ea66a', // vert herbe
+              600: '#24885a',
+              700: '#1d6d4a',
+              800: '#17553b',
+              900: '#0e3727'
+            },
+            dirt: {
+              300: '#c08c62',
+              500: '#8b5a2b',
+              700: '#5d3b1a'
+            },
+            stone: {
+              100: '#e8ecef',
+              300: '#c9d0d6',
+              500: '#94a3b0',
+              700: '#4c5c68',
+              900: '#1c252b'
+            }
+          },
+          fontFamily: {
+            pixel: ['"Press Start 2P"', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial']
+          },
+          boxShadow: {
+            block: '0 0 0 3px rgba(46,166,106,0.25)'
+          },
+          backgroundImage: {
+            'hero-grid': 'linear-gradient(transparent 31px, rgba(255,255,255,0.06) 32px), linear-gradient(90deg, transparent 31px, rgba(255,255,255,0.06) 32px)',
+            'grass': 'linear-gradient(180deg, rgba(46,166,106,0.35), transparent 60%)'
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Webfonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Tablette paysage : rééquilibrage grille */
+    @media (orientation: landscape) and (max-width: 1024px) {
+      .landscape-grid { grid-template-columns: 1.1fr 0.9fr; }
+    }
+    /* Effets utilitaires */
+    .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,0.04); }
+    .pixel-border { box-shadow: inset 0 -4px 0 rgba(0,0,0,0.2); }
+  </style>
+</head>
+<body class="bg-stone-900 text-white font-sans selection:bg-craft-600 selection:text-white">
+  <!-- Header / Nav -->
+  <header class="sticky top-0 z-50 bg-stone-900/85 glass border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#hero" class="flex items-center gap-3 group" aria-label="Aller au début">
+          <div class="w-10 h-10 rounded-md bg-craft-600 grid place-content-center shadow-block">
+            <span class="text-xl">🧱</span>
+          </div>
+          <div class="leading-tight">
+            <div class="font-pixel text-sm tracking-tight">Block&Co</div>
+            <div class="text-xs text-white/60">Créateurs d’aventures</div>
+          </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a class="hover:text-craft-400 transition" href="#benefits">Bénéfices</a>
+          <a class="hover:text-craft-400 transition" href="#social2">Témoignages</a>
+          <a class="hover:text-craft-400 transition" href="#faq">FAQ</a>
+          <a class="px-4 py-2 rounded-md bg-craft-600 hover:bg-craft-500 transition shadow-block" href="#cta-final">Jouer maintenant</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden p-2 rounded-md hover:bg-white/5" aria-expanded="false" aria-controls="mobileMenu" aria-label="Ouvrir le menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/5">
+      <div class="px-4 py-3 space-y-2 text-sm">
+        <a class="block px-3 py-2 rounded-md hover:bg-white/5" href="#benefits">Bénéfices</a>
+        <a class="block px-3 py-2 rounded-md hover:bg-white/5" href="#social2">Témoignages</a>
+        <a class="block px-3 py-2 rounded-md hover:bg-white/5" href="#faq">FAQ</a>
+        <a class="block px-3 py-2 rounded-md bg-craft-600 hover:bg-craft-500 text-center" href="#cta-final">Jouer maintenant</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-hero-grid bg-[length:32px_32px] opacity-30 pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-28 grid gap-10 lg:grid-cols-2 landscape-grid items-center">
+
+      <div class="space-y-6">
+        <p class="uppercase tracking-[0.2em] text-white/70 text-xs">Jeu vidéo • Sandbox • Créatif</p>
+        <h1 class="font-pixel text-3xl sm:text-4xl leading-relaxed">
+          Minecraft
+        </h1>
+        <p class="text-white/80 text-lg max-w-xl">
+          Explorez, minez et construisez sans limites. Seul ou à plusieurs, façonnez votre monde bloc par bloc et survivez à la nuit.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+          <a href="#cta-final" class="inline-flex items-center justify-center px-6 py-3 rounded-md bg-craft-600 hover:bg-craft-500 shadow-block font-semibold">Jouer maintenant</a>
+          <a href="#trailer" class="inline-flex items-center justify-center px-6 py-3 rounded-md border border-white/15 hover:border-white/30">Voir la bande‑annonce</a>
+        </div>
+        <div class="flex items-center gap-6 pt-4 text-sm text-white/70">
+          <div class="flex items-center gap-2">
+            <span class="">★★★★★</span>
+            <span>4,9/5 • 40k+ avis</span>
+          </div>
+          <div class="hidden sm:block">#1 bac à sable créatif</div>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="aspect-[16/9] rounded-lg overflow-hidden border border-white/10 shadow-2xl pixel-border" id="trailer">
+          <!-- Remplacez l'URL par votre vidéo officielle -->
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/MmB9b5njVbA?rel=0&modestbranding=1" title="Minecraft Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p class="mt-3 text-xs text-white/60">Astuce : une image hero compressée peut accélérer le chargement sur mobile.</p>
+      </div>
+
+      <!-- Social proof logos (micro) -->
+      <div class="lg:col-span-2 border-t border-white/5 pt-8 mt-4">
+        <p class="text-sm text-white/60 mb-4">Approuvé par des créateurs et la presse :</p>
+        <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4 opacity-85">
+          <div class="h-12 bg-white/5 rounded-md grid place-content-center border border-white/10">Mojang</div>
+          <div class="h-12 bg-white/5 rounded-md grid place-content-center border border-white/10">Xbox</div>
+          <div class="h-12 bg-white/5 rounded-md grid place-content-center border border-white/10">IGN</div>
+          <div class="h-12 bg-white/5 rounded-md grid place-content-center border border-white/10">GameSpot</div>
+          <div class="h-12 bg-white/5 rounded-md grid place-content-center border border-white/10">JV.com</div>
+          <div class="h-12 bg-white/5 rounded-md grid place-content-center border border-white/10">PC Gamer</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section id="benefits" class="relative py-16 lg:py-24 bg-gradient-to-b from-stone-900 to-stone-800">
+    <div class="absolute inset-0 bg-grass pointer-events-none" aria-hidden="true"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div class="space-y-4">
+          <h2 class="font-pixel text-2xl sm:text-3xl">Pourquoi vous allez adorer</h2>
+          <p class="text-white/70 max-w-prose">Des possibilités créatives infinies, une communauté massive et un monde procédural où chaque partie raconte une histoire différente.</p>
+          <div class="grid sm:grid-cols-2 gap-4 mt-6">
+            <!-- Benefits (primaires) -->
+            <div class="p-5 rounded-lg border border-white/10 bg-white/5">
+              <div class="text-2xl mb-2">🧭</div>
+              <h3 class="font-semibold">Liberté totale</h3>
+              <p class="text-sm text-white/70">Construisez, survivez ou explorez en mode Créatif ou Survie — à vous de choisir.</p>
+            </div>
+            <div class="p-5 rounded-lg border border-white/10 bg-white/5">
+              <div class="text-2xl mb-2">🤝</div>
+              <h3 class="font-semibold">Jouez ensemble</h3>
+              <p class="text-sm text-white/70">Rejoignez des serveurs, réalisez des projets titanesques en multijoueur.</p>
+            </div>
+            <div class="p-5 rounded-lg border border-white/10 bg-white/5">
+              <div class="text-2xl mb-2">🧪</div>
+              <h3 class="font-semibold">Systèmes profonds</h3>
+              <p class="text-sm text-white/70">Redstone, enchantements, potions : créez des machines et optimisez vos builds.</p>
+            </div>
+            <div class="p-5 rounded-lg border border-white/10 bg-white/5">
+              <div class="text-2xl mb-2">🌍</div>
+              <h3 class="font-semibold">Monde vivant</h3>
+              <p class="text-sm text-white/70">Biomes variés, structures cachées, créatures uniques et mises à jour régulières.</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-3 pt-4">
+            <a href="#cta-final" class="px-6 py-3 rounded-md bg-craft-600 hover:bg-craft-500 shadow-block font-semibold">Télécharger</a>
+            <a href="#faq" class="px-6 py-3 rounded-md border border-white/15 hover:border-white/30">Questions fréquentes</a>
+          </div>
+        </div>
+
+        <!-- Features (secondaires) -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <div class="p-4 rounded-md border border-white/10 bg-stone-800/70">
+            <div class="text-xs uppercase text-white/60">Plateformes</div>
+            <div class="mt-2 text-sm">PC, PlayStation, Xbox, Switch, Mobile</div>
+          </div>
+          <div class="p-4 rounded-md border border-white/10 bg-stone-800/70">
+            <div class="text-xs uppercase text-white/60">Modes</div>
+            <div class="mt-2 text-sm">Survie, Créatif, Aventure</div>
+          </div>
+          <div class="p-4 rounded-md border border-white/10 bg-stone-800/70">
+            <div class="text-xs uppercase text-white/60">Multijoueur</div>
+            <div class="mt-2 text-sm">Local & Online, Realms</div>
+          </div>
+          <div class="p-4 rounded-md border border-white/10 bg-stone-800/70">
+            <div class="text-xs uppercase text-white/60">Accessibilité</div>
+            <div class="mt-2 text-sm">Sous‑titres, réglages visuels</div>
+          </div>
+          <div class="p-4 rounded-md border border-white/10 bg-stone-800/70">
+            <div class="text-xs uppercase text-white/60">Contenu</div>
+            <div class="mt-2 text-sm">Packs, marketplace, seeds</div>
+          </div>
+          <div class="p-4 rounded-md border border-white/10 bg-stone-800/70">
+            <div class="text-xs uppercase text-white/60">Âge</div>
+            <div class="mt-2 text-sm">PEGI 7</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof (Testimonials) -->
+  <section id="social2" class="py-16 lg:py-24 border-y border-white/5 bg-gradient-to-b from-stone-800 to-stone-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-pixel text-2xl sm:text-3xl text-center mb-10">Ils en parlent</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <figure class="p-6 rounded-lg border border-white/10 bg-white/5">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200" alt="Photo cliente" class="w-10 h-10 rounded object-cover" />
+            <figcaption>
+              <div class="font-semibold">Julie R.</div>
+              <div class="text-xs text-white/60">Toulouse</div>
+            </figcaption>
+          </div>
+          <blockquote class="text-white/80">« On a construit une ville entière en classe. Apprentissage et fun réunis ! »</blockquote>
+        </figure>
+        <figure class="p-6 rounded-lg border border-white/10 bg-white/5">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=200" alt="Photo client" class="w-10 h-10 rounded object-cover" />
+            <figcaption>
+              <div class="font-semibold">Kamel D.</div>
+              <div class="text-xs text-white/60">Casablanca</div>
+            </figcaption>
+          </div>
+          <blockquote class="text-white/80">« La Redstone m’a donné envie d’apprendre l’électronique. »</blockquote>
+        </figure>
+        <figure class="p-6 rounded-lg border border-white/10 bg-white/5">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=200" alt="Photo client" class="w-10 h-10 rounded object-cover" />
+            <figcaption>
+              <div class="font-semibold">Noa S.</div>
+              <div class="text-xs text-white/60">Bruxelles</div>
+            </figcaption>
+          </div>
+          <blockquote class="text-white/80">« Des années plus tard, je découvre encore des trucs. »</blockquote>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-16 lg:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-pixel text-2xl sm:text-3xl text-center mb-10">Questions fréquentes</h2>
+      <div class="space-y-3">
+        <details class="group border border-white/10 rounded-md p-5 bg-white/5">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="font-semibold">Java Edition ou Bedrock ?</span>
+            <span class="ml-3 transition group-open:rotate-45">+</span>
+          </summary>
+          <div class="pt-3 text-white/80">Java : modding riche sur PC. Bedrock : cross‑play plus large (console/mobile/PC).</div>
+        </details>
+        <details class="group border border-white/10 rounded-md p-5 bg-white/5">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="font-semibold">Peut‑on jouer en écran partagé ?</span>
+            <span class="ml-3 transition group-open:rotate-45">+</span>
+          </summary>
+          <div class="pt-3 text-white/80">Oui, sur certaines plateformes (ex. consoles) en mode local.</div>
+        </details>
+        <details class="group border border-white/10 rounded-md p-5 bg-white/5">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="font-semibold">Y a‑t‑il un mode histoire ?</span>
+            <span class="ml-3 transition group-open:rotate-45">+</span>
+          </summary>
+          <div class="pt-3 text-white/80">Le jeu est émergent/sandbox. Des maps aventures et serveurs proposent des scénarios dédiés.</div>
+        </details>
+        <details class="group border border-white/10 rounded-md p-5 bg-white/5">
+          <summary class="flex items-center justify-between cursor-pointer list-none">
+            <span class="font-semibold">Quelles configs PC ?</span>
+            <span class="ml-3 transition group-open:rotate-45">+</span>
+          </summary>
+          <div class="pt-3 text-white/80">Le jeu tourne sur des machines modestes. Une carte dédiée améliore les shaders/RTX.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section id="cta-final" class="py-16 lg:py-24 bg-[radial-gradient(800px_300px_at_50%_-20%,_rgba(46,166,106,0.25),_transparent_70%)]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-pixel text-2xl sm:text-3xl mb-4">Prêt à miner et à construire ?</h2>
+      <p class="text-white/80 mb-6">Rejoignez des millions de joueurs et laissez libre cours à votre créativité.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="https://www.minecraft.net/fr-fr/download" class="px-7 py-3 rounded-md bg-craft-600 hover:bg-craft-500 shadow-block font-semibold">Acheter Minecraft</a>
+        <a href="#benefits" class="px-7 py-3 rounded-md border border-white/15 hover:border-white/30">Voir les fonctionnalités</a>
+      </div>
+      <p class="mt-3 text-xs text-white/60">*Fonctionnalités et options variables selon la plateforme.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 py-10 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div class="text-white/60">© <span id="year"></span> Block&Co. Fan‑site concept — non officiel.</div>
+        <ul class="flex flex-wrap gap-4 text-white/70">
+          <li><a class="hover:text-white" href="#">Conditions d’utilisation</a></li>
+          <li><a class="hover:text-white" href="#">Politique de confidentialité</a></li>
+          <li><a class="hover:text-white" href="#">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS minimal -->
+  <script>
+    // Année courante
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menu mobile toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => {
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!expanded));
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Défilement doux
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      })
+    });
+  </script>
+</body>
+</html>
